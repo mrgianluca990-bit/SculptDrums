@@ -1,30 +1,40 @@
 #pragma once
-#include <juce_core/juce_core.h>
+#include <algorithm>
+#include <array>
+#include <cstddef>
 #include <cmath>
 
 namespace sculpt
 {
-struct Weights { float natural, treated, electronic; };
+constexpr int stageCount = 6;
+struct Weights { std::array<float, stageCount> stage {}; };
 
-// MORPH 0..100 -> pesi a potenza costante su tre regioni:
-// 0 naturale | 50 trattato | 100 elettronico. 'gamma' = curva propria del pezzo.
+// Sei posizioni ordinate come le cartelle dell'archivio dell'utente:
+// 01/02 Natural, 03/04/05 processed, 06 Electro.
+// Le dissolvenze a potenza costante coinvolgono esclusivamente due stadi adiacenti.
 inline Weights morphWeights (float morph, float gamma)
 {
-    float t = juce::jlimit (0.0f, 1.0f, morph * 0.01f);
-    t = std::pow (t, gamma);
-    const float u = t * 2.0f;
-    const float hp = juce::MathConstants<float>::halfPi;
-
-    if (u < 1.0f) return { std::cos (u * hp), std::sin (u * hp), 0.0f };
-    return { 0.0f, std::cos ((u - 1.0f) * hp), std::sin ((u - 1.0f) * hp) };
+    const float x = std::clamp (morph * (float) (stageCount - 1) * 0.01f,
+                                0.0f, (float) (stageCount - 1));
+    const int first = std::min ((int) x, stageCount - 1);
+    const int second = std::min (first + 1, stageCount - 1);
+    // La curva propria del pezzo agisce solo ALL'INTERNO dello stadio:
+    // i riferimenti 0/20/40/60/80/100 restano identici per ogni nota MIDI.
+    const float u = std::pow (x - (float) first, std::max (0.01f, gamma));
+    constexpr float halfPi = 1.57079632679489661923f;
+    Weights w;
+    w.stage[(std::size_t) first] = std::cos (u * halfPi);
+    if (second != first)
+        w.stage[(std::size_t) second] = std::sin (u * halfPi);
+    return w;
 }
 
 // Applica l'offset round robin; vicino agli estremi la variazione si attenua
 // per rispettare il carattere acustico/elettronico scelto.
 inline float applyOffset (float morph, float offset)
 {
-    const float edge = juce::jlimit (0.0f, 1.0f, juce::jmin (morph, 100.0f - morph) / 10.0f);
-    return juce::jlimit (0.0f, 100.0f, morph + offset * edge);
+    const float edge = std::clamp (std::min (morph, 100.0f - morph) / 10.0f, 0.0f, 1.0f);
+    return std::clamp (morph + offset * edge, 0.0f, 100.0f);
 }
 
 // Sequenza di variazioni +/- senza ripetizioni immediate (valori da calibrare per pezzo).

@@ -59,8 +59,8 @@ private:
         int note = -1;
         float gamma = 1.0f;
         int choke = 0;                                  // 0 = nessun gruppo
-        std::array<std::vector<Sample>, 3> layers;      // naturale, trattato, elettronico
-        std::array<int, 3> rrCounter { 0, 0, 0 };      // rotazione varianti campione
+        std::array<std::vector<Sample>, sculpt::stageCount> layers;
+        std::array<int, sculpt::stageCount> rrCounter {}; // varianti indipendenti per stadio
         sculpt::RoundRobin rr;                          // round robin delle miscele
     };
 
@@ -70,8 +70,8 @@ private:
         int piece = 0, pos = 0;
         float vel = 1.0f;
         float rrOffset = 0.0f; // fissato al colpo, resta durante il decadimento
-        float w[3] { 1, 0, 0 };
-        const juce::AudioBuffer<float>* src[3] { nullptr, nullptr, nullptr };
+        std::array<float, sculpt::stageCount> w {};
+        std::array<const juce::AudioBuffer<float>*, sculpt::stageCount> src {};
         bool choking = false;
         float chokeGain = 1.0f;
     };
@@ -81,8 +81,9 @@ private:
     static juce::AudioProcessorValueTreeState::ParameterLayout createLayout();
     static std::vector<Piece> makePlaceholderKit (double sr);
     static bool loadSample (juce::AudioFormatManager&, const juce::File&, double sr, juce::AudioBuffer<float>& out);
+    static bool loadMicGroup (juce::AudioFormatManager&, const juce::File& base,
+                              const juce::var& entry, double sr, juce::AudioBuffer<float>& out);
     static void levelMatchGroup (std::vector<Sample>&, double sr);
-    static juce::AudioBuffer<float> makeTreated (const juce::AudioBuffer<float>& in, double sr);
     static int pickVariant (Piece&, int layer, int vel127);
 
     void loadKit (double sr, juce::Thread& thread);

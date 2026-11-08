@@ -1,752 +1,1635 @@
 {
- "version": 1,
- "sampleFolder": "Campioni",
- "pieces": [
-  {
-   "id": "kick",
-   "note": 36,
-   "gamma": 1.0,
-   "choke": 0,
-   "natural": [
+  "version": 2,
+  "sampleFolder": ".",
+  "morphStages": [
     {
-     "file": "CAMPIONI/KICK.wav",
-     "vel": [
-      0,
-      127
-     ]
+      "name": "01 Natural ",
+      "position": 0
     },
     {
-     "file": "CAMPIONI/Kick Figo.wav",
-     "vel": [
-      0,
-      127
-     ]
+      "name": "02 Natural",
+      "position": 20
     },
     {
-     "file": "Mindance/k 1.wav",
-     "vel": [
-      0,
-      127
-     ]
+      "name": "03 processed",
+      "position": 40
     },
     {
-     "file": "Mindance/k 2.wav",
-     "vel": [
-      0,
-      127
-     ]
+      "name": "04 processed",
+      "position": 60
     },
     {
-     "file": "Mindance/k 3.wav",
-     "vel": [
-      0,
-      127
-     ]
+      "name": "05 processed",
+      "position": 80
     },
     {
-     "file": "Mindance/k 4.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "NEW/Kick New.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "very new/new_Kick 1.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "very new/new_Kick High.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "very new/new_Kick mp.wav",
-     "vel": [
-      71,
-      100
-     ]
-    },
-    {
-     "file": "very new/new_Kick p.wav",
-     "vel": [
-      41,
-      70
-     ]
-    },
-    {
-     "file": "very new/new_Kick pp.wav",
-     "vel": [
-      0,
-      40
-     ]
+      "name": "06 Electro",
+      "position": 100
     }
-   ],
-   "treated": [],
-   "electronic": [
+  ],
+  "pieces": [
     {
-     "file": "Electro/Kick/Kick Want2Survive DS 1.wav"
+      "id": "kick",
+      "note": 36,
+      "gamma": 1.0,
+      "choke": 0,
+      "stages": [
+        [
+          {
+            "oh": "01 Natural /Indra Kick High over.wav",
+            "room": "01 Natural /Indra Kick High room.wav",
+            "file": "01 Natural /Indra Kick High.wav"
+          },
+          {
+            "oh": "01 Natural /Indra Kick low Over.wav",
+            "room": "01 Natural /Indra Kick low room.wav",
+            "file": "01 Natural /Indra Kick low.wav"
+          }
+        ],
+        [
+          {
+            "file": "02 Natural/k 1.wav"
+          },
+          {
+            "file": "02 Natural/k 2.wav"
+          },
+          {
+            "file": "02 Natural/k 3.wav"
+          },
+          {
+            "file": "02 Natural/k 4.wav"
+          }
+        ],
+        [
+          {
+            "file": "03 processed/Kick.wav"
+          },
+          {
+            "file": "03 processed/Kick_2.wav"
+          }
+        ],
+        [
+          {
+            "file": "04 processed/Cassa 2.wav"
+          },
+          {
+            "file": "04 processed/Cassa.wav"
+          }
+        ],
+        [
+          {
+            "file": "05 processed/KICK.wav"
+          },
+          {
+            "file": "05 processed/Kick Figo.wav"
+          },
+          {
+            "file": "05 processed/Kick New.wav"
+          }
+        ],
+        [
+          {
+            "file": "06 Electro/Kick/Kick Atomized 1.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Atomized 2.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick BasketCase 1.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick BasketCase 2.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Betrayed DS 1.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Betrayed DS 2.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Caustic 1.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Caustic 2.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Collapse 1.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Collapse 2.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Cracked 1.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Cracked 2.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Crypt 1.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Crypt 2.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Damnation 1.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Damnation 2.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick DarkDub 1.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick DarkDub 2.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick DayWalker 1.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Daywalker 2.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Doomsday 1.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Doomsday 2.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick EchoPlex 1.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick EchoPlex 2.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Eclipse 1.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Eclipse 2.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Falling 1.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Falling 2.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Forsaken 1.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Forsaken 2.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick GravelTrap 1.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick GravelTrap 2.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Gravity 1.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Gravity 2.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Hemp 1.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Hemp 2.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Inception Kit DS 1.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Inception Kit DS 2.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick LetItGo 1.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick LetItGo 2.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick NYC 1.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick NYC 2.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Pandemic 1.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Pandemic 2.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Passive 1.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Passive 2.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Petroleum 1.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Petroleum 2.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick PigFace 1.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick PigFace 2.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Pressure 1.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Pressure 2.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick QuantumReap 1.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick QuantumReap 2.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick RattleSnakes 1.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick RattleSnakes 2.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick ReachingOut DS.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick ReachingOut.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick SanityKillz 1.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick SanityKillz 2.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick ShockOut 1.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick ShockOut 2.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick SoTek 1.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick SoTek 2.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick SteamPipe 1.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick SteamPipe 2.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick TokyoDrift 1.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick TokyoDrift 2.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Want2Survive DS 1.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Want2Survive DS 2.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Warewolf 1.wav"
+          },
+          {
+            "file": "06 Electro/Kick/Kick Warewolf 2.wav"
+          }
+        ]
+      ]
     },
     {
-     "file": "Electro/Kick/Kick Want2Survive DS 2.wav"
+      "id": "snare",
+      "note": 38,
+      "gamma": 0.85,
+      "choke": 0,
+      "stages": [
+        [
+          {
+            "oh": "01 Natural /Indra Snare 1 Over.wav",
+            "room": "01 Natural /Indra Snare 1 Room.wav",
+            "file": "01 Natural /Indra Snare 1.wav"
+          },
+          {
+            "room": "01 Natural /Indra Snare 2 Room.wav",
+            "oh": "01 Natural /Indra Snare 2 over.wav",
+            "file": "01 Natural /Indra Snare 2.wav"
+          },
+          {
+            "room": "01 Natural /Indra Snare 3 Room.wav",
+            "oh": "01 Natural /Indra Snare 3 over.wav",
+            "file": "01 Natural /Indra Snare 3.wav"
+          }
+        ],
+        [
+          {
+            "file": "02 Natural/S 1.wav"
+          },
+          {
+            "file": "02 Natural/S 2.wav"
+          },
+          {
+            "file": "02 Natural/S 3.wav"
+          },
+          {
+            "file": "02 Natural/S 4.wav"
+          }
+        ],
+        [
+          {
+            "file": "03 processed/Snare_01.wav"
+          }
+        ],
+        [
+          {
+            "file": "04 processed/Rullo.wav"
+          }
+        ],
+        [
+          {
+            "file": "05 processed/Rullo figo.wav"
+          },
+          {
+            "file": "05 processed/SNARE.wav"
+          },
+          {
+            "file": "05 processed/Snare trig NEW.wav"
+          }
+        ],
+        [
+          {
+            "file": "06 Electro/Snare/Rim GravelTrap 1.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Rim GravelTrap 2.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Rim Want2Survive 1.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Rim Want2Survive 2.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Atomized 1.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Atomized 2.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare BasketCase 1.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare BasketCase 2.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare BasketCase 3.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Betrayed DS 1.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Betrayed DS 2.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Betrayed DS 3.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Caustic 1.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Caustic 2.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Caustic 3.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Collapse 1.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Collapse 2.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Collapse 3.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Cracked 1.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Cracked 2.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Crypt 1.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Crypt 2.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Crypt 3.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Damnation 1.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Damnation 2.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Damnation 3.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Daywalker 1.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Daywalker 2.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Daywalker 3.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Doomsday 1.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Doomsday 2.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare EchoPlex 1.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare EchoPlex 2.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Eclipse 1.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Eclipse 2.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Eclipse 3.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Falling 1.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Falling 2.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Forsaken 1.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Forsaken 2.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Forsaken 3.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Gravity 1.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Gravity 2.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Hemp 1.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Hemp 2.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Inception 1.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Inception 2.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Inception 3.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare LetItGo 1.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare LetItGo 2.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare LetItGo 3.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare NYC 1.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare NYC 2.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Pandemic 1.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Pandemic 2.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Passive 1.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Passive 2.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Passive 3.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Petroleum 1.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Petroleum 2.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare PigFace 1.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare PigFace 2.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Pressure 1.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Pressure 2.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Pressure 3.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare QuantumReap 1.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare QuantumReap 2.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare QuantumReap 3.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare RattleSnakes 1.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare RattleSnakes 2.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare ReachingOut 1.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare ReachingOut 2.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare SanityKillz 1.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare SanityKillz 2.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare ShockOut 1.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare ShockOut 2.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare ShockOut 3.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare SoTek DS 1.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare SoTek DS 2.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare SoTek.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare SteamPipe 1.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare SteamPipe 2.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare SteamPipe 3.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare TokyoDrift 1.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare TokyoDrift 2.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare TokyoDrift 3.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Warewolf 1.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Warewolf 2.wav"
+          },
+          {
+            "file": "06 Electro/Snare/Snare Warewolf 3.wav"
+          },
+          {
+            "file": "06 Electro/Snare/SnareRoll DarkDub 1.wav"
+          },
+          {
+            "file": "06 Electro/Snare/SnareRoll DarkDub 2.wav"
+          }
+        ]
+      ]
     },
     {
-     "file": "Electro/Kick/Kick RattleSnakes 1.wav"
+      "id": "snare_rim",
+      "note": 37,
+      "gamma": 0.85,
+      "choke": 0,
+      "stages": [
+        [],
+        [],
+        [],
+        [
+          {
+            "file": "04 processed/Rullo bordo.wav"
+          }
+        ],
+        [],
+        []
+      ]
     },
     {
-     "file": "Electro/Kick/Kick RattleSnakes 2.wav"
+      "id": "snare_rimshot",
+      "note": 40,
+      "gamma": 0.85,
+      "choke": 0,
+      "stages": [
+        [],
+        [],
+        [],
+        [
+          {
+            "file": "04 processed/Rullo rimshot.wav"
+          }
+        ],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "clap",
+      "note": 39,
+      "gamma": 1.0,
+      "choke": 0,
+      "stages": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [
+          {
+            "file": "06 Electro/Clap/Clap EchoPlex.wav"
+          },
+          {
+            "file": "06 Electro/Clap/Clap Forsaken .wav"
+          },
+          {
+            "file": "06 Electro/Clap/Clap Hemp.wav"
+          },
+          {
+            "file": "06 Electro/Clap/Clap SteamPipe.wav"
+          },
+          {
+            "file": "06 Electro/Clap/Clap Want2Survive.wav"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "hihat_closed",
+      "note": 42,
+      "gamma": 1.2,
+      "choke": 1,
+      "stages": [
+        [],
+        [
+          {
+            "file": "02 Natural/hh 1.wav"
+          },
+          {
+            "file": "02 Natural/hh 2.wav"
+          },
+          {
+            "file": "02 Natural/hh 3.wav"
+          },
+          {
+            "file": "02 Natural/hh 4.wav"
+          },
+          {
+            "file": "02 Natural/hh 5.wav"
+          },
+          {
+            "file": "02 Natural/hh 6.wav"
+          }
+        ],
+        [],
+        [
+          {
+            "file": "04 processed/hithat chiuso.wav"
+          }
+        ],
+        [],
+        [
+          {
+            "file": "06 Electro/HiHat/ClosedHH Atomized 1.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH Atomized 2.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH Atomized 3.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH BasketCase.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH Betrayed DS.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH Caustic 1.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH Caustic 2.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH Collapse 1.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH Collapse 2.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH Cracked 1.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH Cracked 2.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH Crypt 1.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH Crypt 2.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH Damnation.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH DarkDub 1.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH DarkDub 2.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH Daywalker 1.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH Doomsday 1.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH EchoPlex 1.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH Eclipse 1.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH Eclipse 2.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH Falling.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH Forsaken .wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH GravelTrap.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH Gravity.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH Hemp.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH Inception 1.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH Inception 2.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH LetItGo.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH NYC 2.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH NYC.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH Pandemic.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH Passive.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH Petroleum.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH PigFace 1.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH PigFace 2.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH PigFace 3.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH Pressure 1.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH Pressure 2.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH Pressure 3.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH QuantumReap.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH RattleSnakes.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH ReachingOut 1.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH ReachingOut 2.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH SanityKillz.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH ShockOut 1.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH ShockOut 2.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH SoTek 1.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH SoTek 2.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH SteamPipe 1.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH SteamPipe 2.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH TokyoDrift.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH Want2Survive DS.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/ClosedHH Warewolf.wav"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "hihat_foot",
+      "note": 44,
+      "gamma": 1.2,
+      "choke": 1,
+      "stages": [
+        [],
+        [
+          {
+            "file": "02 Natural/hh F long 1.wav"
+          },
+          {
+            "file": "02 Natural/hh F long 2.wav"
+          },
+          {
+            "file": "02 Natural/hh F.wav"
+          }
+        ],
+        [],
+        [
+          {
+            "file": "04 processed/hithat piede.wav"
+          }
+        ],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "hihat_open",
+      "note": 46,
+      "gamma": 1.2,
+      "choke": 1,
+      "stages": [
+        [],
+        [
+          {
+            "file": "02 Natural/hh op 1.wav"
+          },
+          {
+            "file": "02 Natural/hh op 2.wav"
+          },
+          {
+            "file": "02 Natural/hh op 3.wav"
+          },
+          {
+            "file": "02 Natural/hh op bell.wav"
+          }
+        ],
+        [],
+        [
+          {
+            "file": "04 processed/hithat open corto.wav"
+          }
+        ],
+        [],
+        [
+          {
+            "file": "06 Electro/HiHat/OpenHH Atomized.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/OpenHH BasketCase.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/OpenHH Betrayed DS.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/OpenHH Caustic.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/OpenHH Collapse.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/OpenHH Damnation.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/OpenHH DarkDub.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/OpenHH Daywalker.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/OpenHH Doomsday.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/OpenHH EchoPlex 1.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/OpenHH EchoPlex 2.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/OpenHH Eclipse.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/OpenHH Falling.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/OpenHH Forsaken 1.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/OpenHH Forsaken 2.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/OpenHH GravelTrap.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/OpenHH Gravity.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/OpenHH Hemp 1.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/OpenHH Hemp 2.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/OpenHH LetItGo.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/OpenHH NYC.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/OpenHH Pandemic 1.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/OpenHH Pandemic 2.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/OpenHH Passive.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/OpenHH Petroleum.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/OpenHH QuantumReap 1.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/OpenHH QuantumReap 2.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/OpenHH RattleSnakes.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/OpenHH ReachingOut.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/OpenHH SanityKillz .wav"
+          },
+          {
+            "file": "06 Electro/HiHat/OpenHH ShockOut.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/OpenHH SoTek.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/OpenHH SteamPipe.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/OpenHH TokyoDrift 1.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/OpenHH TokyoDrift 2.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/OpenHH Want2Survive DS.wav"
+          },
+          {
+            "file": "06 Electro/HiHat/OpenHH Warewolf.wav"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "tom",
+      "note": 45,
+      "gamma": 1.0,
+      "choke": 0,
+      "stages": [
+        [
+          {
+            "room": "01 Natural /Indra Tom1 Room.wav",
+            "oh": "01 Natural /Indra Tom1 over.wav",
+            "file": "01 Natural /Indra Tom1.wav"
+          }
+        ],
+        [
+          {
+            "file": "02 Natural/tom 1.wav"
+          },
+          {
+            "file": "02 Natural/tom 2.wav"
+          }
+        ],
+        [
+          {
+            "file": "03 processed/Tom_01.wav"
+          },
+          {
+            "file": "03 processed/Tom_2.wav"
+          },
+          {
+            "file": "03 processed/Tom_3.wav"
+          }
+        ],
+        [
+          {
+            "file": "04 processed/tom.wav"
+          }
+        ],
+        [
+          {
+            "file": "05 processed/TOM1.wav"
+          }
+        ],
+        [
+          {
+            "file": "06 Electro/Tom/Tom BasketCase.wav"
+          },
+          {
+            "file": "06 Electro/Tom/Tom Percman.wav"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "floor_tom",
+      "note": 41,
+      "gamma": 1.0,
+      "choke": 0,
+      "stages": [
+        [
+          {
+            "oh": "01 Natural /Indra Timpano1 Over.wav",
+            "room": "01 Natural /Indra Timpano1 Room.wav",
+            "file": "01 Natural /Indra Timpano1.wav"
+          }
+        ],
+        [
+          {
+            "file": "02 Natural/Tim 1.wav"
+          },
+          {
+            "file": "02 Natural/Tim 2.wav"
+          },
+          {
+            "file": "02 Natural/tom2 1.wav"
+          },
+          {
+            "file": "02 Natural/tom2 2.wav"
+          }
+        ],
+        [],
+        [
+          {
+            "file": "04 processed/Timpano.wav"
+          }
+        ],
+        [
+          {
+            "file": "05 processed/TIMPANO1.wav"
+          },
+          {
+            "file": "05 processed/TIMPANO2.wav"
+          },
+          {
+            "file": "05 processed/TOM2.wav"
+          }
+        ],
+        []
+      ]
+    },
+    {
+      "id": "crash",
+      "note": 49,
+      "gamma": 1.1,
+      "choke": 0,
+      "stages": [
+        [],
+        [
+          {
+            "file": "02 Natural/Crash1 1.wav"
+          },
+          {
+            "file": "02 Natural/Crash1 2.wav"
+          },
+          {
+            "file": "02 Natural/Crash2 1.wav"
+          },
+          {
+            "file": "02 Natural/Crash2 2.wav"
+          }
+        ],
+        [],
+        [
+          {
+            "file": "04 processed/Crash1.wav"
+          },
+          {
+            "file": "04 processed/Crash2.wav"
+          }
+        ],
+        [],
+        [
+          {
+            "file": "06 Electro/Cymbal/Crash Betrayed DS.wav"
+          },
+          {
+            "file": "06 Electro/Cymbal/Cymbal Caustic.wav"
+          },
+          {
+            "file": "06 Electro/Cymbal/Cymbal Collapse.wav"
+          },
+          {
+            "file": "06 Electro/Cymbal/Cymbal Doomsday.wav"
+          },
+          {
+            "file": "06 Electro/Cymbal/Cymbal Eclipse.wav"
+          },
+          {
+            "file": "06 Electro/Cymbal/Cymbal Falling.wav"
+          },
+          {
+            "file": "06 Electro/Cymbal/Cymbal Gravity.wav"
+          },
+          {
+            "file": "06 Electro/Cymbal/Cymbal Petroleum.wav"
+          },
+          {
+            "file": "06 Electro/Cymbal/Cymbal ReachingOut.wav"
+          },
+          {
+            "file": "06 Electro/Cymbal/Cymbal Warewolf.wav"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "reverse_cymbal",
+      "note": 52,
+      "gamma": 1.1,
+      "choke": 0,
+      "stages": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [
+          {
+            "file": "06 Electro/Cymbal/RevCymbal SteamPipe.wav"
+          },
+          {
+            "file": "06 Electro/Cymbal/RevCymbal TokyoDrift.wav"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ride",
+      "note": 51,
+      "gamma": 1.1,
+      "choke": 0,
+      "stages": [
+        [],
+        [
+          {
+            "file": "02 Natural/ride 1.wav"
+          },
+          {
+            "file": "02 Natural/ride 2.wav"
+          },
+          {
+            "file": "02 Natural/ride 3.wav"
+          },
+          {
+            "file": "02 Natural/ride 4.wav"
+          },
+          {
+            "file": "02 Natural/ride 5.wav"
+          }
+        ],
+        [],
+        [
+          {
+            "file": "04 processed/ride.wav"
+          }
+        ],
+        [],
+        [
+          {
+            "file": "06 Electro/Cymbal/Ride Atomized 1.wav"
+          },
+          {
+            "file": "06 Electro/Cymbal/Ride Atomized 2.wav"
+          },
+          {
+            "file": "06 Electro/Cymbal/Ride BasketCase 1.wav"
+          },
+          {
+            "file": "06 Electro/Cymbal/Ride BasketCase 2.wav"
+          },
+          {
+            "file": "06 Electro/Cymbal/Ride Crypt.wav"
+          },
+          {
+            "file": "06 Electro/Cymbal/Ride Damnation.wav"
+          },
+          {
+            "file": "06 Electro/Cymbal/Ride Daywalker.wav"
+          },
+          {
+            "file": "06 Electro/Cymbal/Ride Doomsday.wav"
+          },
+          {
+            "file": "06 Electro/Cymbal/Ride EchoPlex.wav"
+          },
+          {
+            "file": "06 Electro/Cymbal/Ride Falling.wav"
+          },
+          {
+            "file": "06 Electro/Cymbal/Ride Forsaken.wav"
+          },
+          {
+            "file": "06 Electro/Cymbal/Ride GravelTrap.wav"
+          },
+          {
+            "file": "06 Electro/Cymbal/Ride Hemp.wav"
+          },
+          {
+            "file": "06 Electro/Cymbal/Ride Inception.wav"
+          },
+          {
+            "file": "06 Electro/Cymbal/Ride Petroleum.wav"
+          },
+          {
+            "file": "06 Electro/Cymbal/Ride Pressure.wav"
+          },
+          {
+            "file": "06 Electro/Cymbal/Ride RattleSnakes.wav"
+          },
+          {
+            "file": "06 Electro/Cymbal/Ride ReachingOut.wav"
+          },
+          {
+            "file": "06 Electro/Cymbal/Ride SanityKillz.wav"
+          },
+          {
+            "file": "06 Electro/Cymbal/Ride SoTek.wav"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "ride_bell",
+      "note": 53,
+      "gamma": 1.1,
+      "choke": 0,
+      "stages": [
+        [],
+        [
+          {
+            "file": "02 Natural/ride bell 1.wav"
+          },
+          {
+            "file": "02 Natural/ride bell 2.wav"
+          }
+        ],
+        [],
+        [
+          {
+            "file": "04 processed/ride bell.wav"
+          }
+        ],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "splash",
+      "note": 55,
+      "gamma": 1.1,
+      "choke": 0,
+      "stages": [
+        [],
+        [],
+        [],
+        [
+          {
+            "file": "04 processed/Splash.wav"
+          },
+          {
+            "file": "04 processed/Splash2.wav"
+          }
+        ],
+        [],
+        []
+      ]
+    },
+    {
+      "id": "shaker",
+      "note": 70,
+      "gamma": 1.0,
+      "choke": 0,
+      "stages": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [
+          {
+            "file": "06 Electro/Shaker/Shaker BasketCase.wav"
+          },
+          {
+            "file": "06 Electro/Shaker/Shaker Betrayed DS.wav"
+          },
+          {
+            "file": "06 Electro/Shaker/Shaker Caustic.wav"
+          },
+          {
+            "file": "06 Electro/Shaker/Shaker Cracked.wav"
+          },
+          {
+            "file": "06 Electro/Shaker/Shaker Crypt.wav"
+          },
+          {
+            "file": "06 Electro/Shaker/Shaker Damnation.wav"
+          },
+          {
+            "file": "06 Electro/Shaker/Shaker Daywalker.wav"
+          },
+          {
+            "file": "06 Electro/Shaker/Shaker Doomsday Kit DS.wav"
+          },
+          {
+            "file": "06 Electro/Shaker/Shaker NYC.wav"
+          },
+          {
+            "file": "06 Electro/Shaker/Shaker Pandemic.wav"
+          },
+          {
+            "file": "06 Electro/Shaker/Shaker Percman.wav"
+          },
+          {
+            "file": "06 Electro/Shaker/Shaker Petroleum.wav"
+          },
+          {
+            "file": "06 Electro/Shaker/Shaker PigFace.wav"
+          },
+          {
+            "file": "06 Electro/Shaker/Shaker QuantumReap.wav"
+          },
+          {
+            "file": "06 Electro/Shaker/Shaker RattleSnakes.wav"
+          },
+          {
+            "file": "06 Electro/Shaker/Shaker SanityKillz.wav"
+          },
+          {
+            "file": "06 Electro/Shaker/Shaker Want2Survive.wav"
+          },
+          {
+            "file": "06 Electro/Shaker/Shaker Warewolf.wav"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "percussion",
+      "note": 75,
+      "gamma": 1.0,
+      "choke": 0,
+      "stages": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [
+          {
+            "file": "06 Electro/Percussion/Bell Pressure.wav"
+          },
+          {
+            "file": "06 Electro/Percussion/Bongo BasketCase.wav"
+          },
+          {
+            "file": "06 Electro/Percussion/Bongo Caustic.wav"
+          },
+          {
+            "file": "06 Electro/Percussion/Bongo Percman 1.wav"
+          },
+          {
+            "file": "06 Electro/Percussion/Bongo Percman 2.wav"
+          },
+          {
+            "file": "06 Electro/Percussion/Bongo Percman 3.wav"
+          },
+          {
+            "file": "06 Electro/Percussion/Bongo Percman 4.wav"
+          },
+          {
+            "file": "06 Electro/Percussion/Bongo ReachingOut.wav"
+          },
+          {
+            "file": "06 Electro/Percussion/Conga Damnation.wav"
+          },
+          {
+            "file": "06 Electro/Percussion/Conga Percman 1.wav"
+          },
+          {
+            "file": "06 Electro/Percussion/Conga Percman 2.wav"
+          },
+          {
+            "file": "06 Electro/Percussion/Perc Betrayed DS.wav"
+          },
+          {
+            "file": "06 Electro/Percussion/Perc Collapse 1.wav"
+          },
+          {
+            "file": "06 Electro/Percussion/Perc Collapse 2.wav"
+          },
+          {
+            "file": "06 Electro/Percussion/Perc Crypt.wav"
+          },
+          {
+            "file": "06 Electro/Percussion/Perc Eclipse 1.wav"
+          },
+          {
+            "file": "06 Electro/Percussion/Perc Eclipse 2.wav"
+          },
+          {
+            "file": "06 Electro/Percussion/Perc Eclipse 3.wav"
+          },
+          {
+            "file": "06 Electro/Percussion/Perc Falling.wav"
+          },
+          {
+            "file": "06 Electro/Percussion/Perc GravelTrap 1.wav"
+          },
+          {
+            "file": "06 Electro/Percussion/Perc GravelTrap 2.wav"
+          },
+          {
+            "file": "06 Electro/Percussion/Perc GravelTrap 3.wav"
+          },
+          {
+            "file": "06 Electro/Percussion/Perc Gravity .wav"
+          },
+          {
+            "file": "06 Electro/Percussion/Perc Passive 1.wav"
+          },
+          {
+            "file": "06 Electro/Percussion/Perc Passive 2.wav"
+          },
+          {
+            "file": "06 Electro/Percussion/Perc Percman 1.wav"
+          },
+          {
+            "file": "06 Electro/Percussion/Perc Percman 2.wav"
+          },
+          {
+            "file": "06 Electro/Percussion/Perc Percman 3.wav"
+          },
+          {
+            "file": "06 Electro/Percussion/Perc Pressure.wav"
+          },
+          {
+            "file": "06 Electro/Percussion/Tambourine DarkDub.wav"
+          },
+          {
+            "file": "06 Electro/Percussion/Tambourine Inception.wav"
+          },
+          {
+            "file": "06 Electro/Percussion/Tambourine Petroleum.wav"
+          },
+          {
+            "file": "06 Electro/Percussion/Tambourine Want2Survive.wav"
+          },
+          {
+            "file": "06 Electro/Percussion/TimbaleRoll Percman.wav"
+          },
+          {
+            "file": "06 Electro/Percussion/Timpani SoTek DS.wav"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "combo",
+      "note": 76,
+      "gamma": 1.0,
+      "choke": 0,
+      "stages": [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [
+          {
+            "file": "06 Electro/Combo/Combo GravelTrap.wav"
+          },
+          {
+            "file": "06 Electro/Combo/Combo Percman 1.wav"
+          },
+          {
+            "file": "06 Electro/Combo/Combo Percman 2.wav"
+          },
+          {
+            "file": "06 Electro/Combo/Combo Percman 3.wav"
+          },
+          {
+            "file": "06 Electro/Combo/Combo RattleSnakes 2.wav"
+          },
+          {
+            "file": "06 Electro/Combo/Combo RattleSnakes.wav"
+          },
+          {
+            "file": "06 Electro/Combo/Combo SteamPipe.wav"
+          }
+        ]
+      ]
     }
-   ]
-  },
-  {
-   "id": "snare",
-   "note": 38,
-   "gamma": 0.85,
-   "choke": 0,
-   "natural": [
-    {
-     "file": "CAMPIONI/SNARE.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "Mindance/S 1.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "Mindance/S 2.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "Mindance/S 3.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "Mindance/S 4.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "NEW/Snare trig NEW.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "very new/new_Snare 1.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "very new/new_Snare 3.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "very new/new_Snare 4.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "very new/new_Snare 5.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "very new/new_Snare 8.wav",
-     "vel": [
-      0,
-      127
-     ]
-    }
-   ],
-   "treated": [],
-   "electronic": [
-    {
-     "file": "Electro/Snare/Snare SoTek DS 1.wav"
-    },
-    {
-     "file": "Electro/Snare/Snare SoTek DS 2.wav"
-    },
-    {
-     "file": "Electro/Snare/Snare Cracked 1.wav"
-    },
-    {
-     "file": "Electro/Snare/Snare Cracked 2.wav"
-    }
-   ]
-  },
-  {
-   "id": "snare_rim",
-   "note": 37,
-   "gamma": 0.85,
-   "choke": 0,
-   "natural": [
-    {
-     "file": "very new/new_Snare 2 rim.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "very new/new_Snare 6 rim.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "very new/new_Snare 9 bordo.wav",
-     "vel": [
-      0,
-      127
-     ]
-    }
-   ],
-   "treated": [],
-   "electronic": [
-    {
-     "file": "Electro/Snare/Rim GravelTrap 1.wav"
-    },
-    {
-     "file": "Electro/Snare/Rim GravelTrap 2.wav"
-    },
-    {
-     "file": "Electro/Snare/Rim Want2Survive 1.wav"
-    },
-    {
-     "file": "Electro/Snare/Rim Want2Survive 2.wav"
-    }
-   ]
-  },
-  {
-   "id": "clap",
-   "note": 39,
-   "gamma": 1.0,
-   "choke": 0,
-   "natural": [],
-   "treated": [],
-   "electronic": [
-    {
-     "file": "Clap/Clap1_1.wav"
-    },
-    {
-     "file": "Clap/Clap1_2.wav"
-    },
-    {
-     "file": "Clap/Clap1_3.wav"
-    },
-    {
-     "file": "Clap/Clap1_4.wav"
-    }
-   ],
-   "electronicOnly": true
-  },
-  {
-   "id": "hihat_closed",
-   "note": 42,
-   "gamma": 1.2,
-   "choke": 1,
-   "natural": [
-    {
-     "file": "Mindance/hh 1.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "Mindance/hh 2.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "Mindance/hh 3.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "Mindance/hh 4.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "Mindance/hh 5.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "Mindance/hh 6.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "Mindance/hh F long 1.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "Mindance/hh F long 2.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "Mindance/hh F.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "very new/new_HH CLOSE.wav",
-     "vel": [
-      0,
-      127
-     ]
-    }
-   ],
-   "treated": [],
-   "electronic": [
-    {
-     "file": "Electro/HiHat/ClosedHH Collapse 1.wav"
-    },
-    {
-     "file": "Electro/HiHat/ClosedHH Collapse 2.wav"
-    },
-    {
-     "file": "Electro/HiHat/ClosedHH SteamPipe 1.wav"
-    },
-    {
-     "file": "Electro/HiHat/ClosedHH SteamPipe 2.wav"
-    }
-   ]
-  },
-  {
-   "id": "hihat_foot",
-   "note": 44,
-   "gamma": 1.2,
-   "choke": 1,
-   "natural": [
-    {
-     "file": "very new/new_HH foot.wav",
-     "vel": [
-      0,
-      127
-     ]
-    }
-   ],
-   "treated": [],
-   "electronic": [
-    {
-     "file": "Electro/HiHat/ClosedHH Collapse 1.wav"
-    },
-    {
-     "file": "Electro/HiHat/ClosedHH Collapse 2.wav"
-    },
-    {
-     "file": "Electro/HiHat/ClosedHH SteamPipe 1.wav"
-    },
-    {
-     "file": "Electro/HiHat/ClosedHH SteamPipe 2.wav"
-    }
-   ]
-  },
-  {
-   "id": "hihat_open",
-   "note": 46,
-   "gamma": 1.2,
-   "choke": 1,
-   "natural": [
-    {
-     "file": "Mindance/hh op 1.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "Mindance/hh op 2.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "Mindance/hh op 3.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "Mindance/hh op bell.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "very new/new_HH open.wav",
-     "vel": [
-      0,
-      127
-     ]
-    }
-   ],
-   "treated": [],
-   "electronic": [
-    {
-     "file": "Electro/HiHat/OpenHH Forsaken 1.wav"
-    },
-    {
-     "file": "Electro/HiHat/OpenHH Forsaken 2.wav"
-    },
-    {
-     "file": "Electro/HiHat/OpenHH TokyoDrift 1.wav"
-    },
-    {
-     "file": "Electro/HiHat/OpenHH TokyoDrift 2.wav"
-    }
-   ]
-  },
-  {
-   "id": "tom",
-   "note": 45,
-   "gamma": 1.0,
-   "choke": 0,
-   "natural": [
-    {
-     "file": "CAMPIONI/TOM1.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "CAMPIONI/TOM2.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "Mindance/tom 1.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "Mindance/tom 2.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "Mindance/tom2 1.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "Mindance/tom2 2.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "very new/new_tom 1.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "very new/new_tom 2.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "very new/new_tom 3.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "very new/new_tom 4.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "very new/new_tom 5.wav",
-     "vel": [
-      0,
-      127
-     ]
-    }
-   ],
-   "treated": [],
-   "electronic": [
-    {
-     "file": "Electro/Tom/Tom Percman.wav"
-    },
-    {
-     "file": "Electro/Tom/Tom BasketCase.wav"
-    }
-   ]
-  },
-  {
-   "id": "crash",
-   "note": 49,
-   "gamma": 1.1,
-   "choke": 0,
-   "natural": [
-    {
-     "file": "Mindance/Crash1 1.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "Mindance/Crash1 2.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "Mindance/Crash2 1.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "Mindance/Crash2 2.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "very new/new_Crash1.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "very new/new_Crash2.wav",
-     "vel": [
-      0,
-      127
-     ]
-    }
-   ],
-   "treated": [],
-   "electronic": [
-    {
-     "file": "Electro/Cymbal/Cymbal Falling.wav"
-    },
-    {
-     "file": "Electro/Cymbal/Cymbal Eclipse.wav"
-    },
-    {
-     "file": "Electro/Cymbal/Cymbal ReachingOut.wav"
-    },
-    {
-     "file": "Electro/Cymbal/Cymbal Warewolf.wav"
-    }
-   ]
-  },
-  {
-   "id": "ride",
-   "note": 51,
-   "gamma": 1.1,
-   "choke": 0,
-   "natural": [
-    {
-     "file": "Mindance/ride 1.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "Mindance/ride 2.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "Mindance/ride 3.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "Mindance/ride 4.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "Mindance/ride 5.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "Mindance/ride bell 1.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "Mindance/ride bell 2.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "very new/new_Ride.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "very new/new_Ride_bell.wav",
-     "vel": [
-      0,
-      127
-     ]
-    }
-   ],
-   "treated": [],
-   "electronic": [
-    {
-     "file": "Electro/Cymbal/Ride Atomized 1.wav"
-    },
-    {
-     "file": "Electro/Cymbal/Ride Atomized 2.wav"
-    },
-    {
-     "file": "Electro/Cymbal/Ride BasketCase 1.wav"
-    },
-    {
-     "file": "Electro/Cymbal/Ride BasketCase 2.wav"
-    }
-   ]
-  },
-  {
-   "id": "splash",
-   "note": 55,
-   "gamma": 1.1,
-   "choke": 0,
-   "natural": [
-    {
-     "file": "very new/new_Splash1.wav",
-     "vel": [
-      0,
-      127
-     ]
-    },
-    {
-     "file": "very new/new_Splash2.wav",
-     "vel": [
-      0,
-      127
-     ]
-    }
-   ],
-   "treated": [],
-   "electronic": [
-    {
-     "file": "Electro/Cymbal/Cymbal Doomsday.wav"
-    },
-    {
-     "file": "Electro/Cymbal/Cymbal Petroleum.wav"
-    },
-    {
-     "file": "Electro/Cymbal/Cymbal Caustic.wav"
-    },
-    {
-     "file": "Electro/Cymbal/Cymbal Gravity.wav"
-    }
-   ]
-  }
- ],
- "unassignedAcoustic": [
-  "CAMPIONI/Rullo figo.wav",
-  "CAMPIONI/Rullo.wav",
-  "CAMPIONI/TIMPANO1.wav",
-  "CAMPIONI/TIMPANO2.wav",
-  "CAMPIONI/rullo2.wav",
-  "Mindance/Tim 1.wav",
-  "Mindance/Tim 2.wav"
- ]
+  ],
+  "sampleFiles": 444
 }

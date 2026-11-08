@@ -1,6 +1,7 @@
 #include "PluginProcessor.h"
 #include "PluginEditor.h"
 #include <algorithm>
+#include <utility>
 
 //==============================================================================
 class SculptDrumsProcessor::KitLoader : public juce::Thread
@@ -13,6 +14,26 @@ public:
 private:
     SculptDrumsProcessor& owner;
 };
+
+// Se due stadi adiacenti ricadono sullo stesso campione (fallback di un
+// elemento mancante), evita il +3 dB che darebbe la somma di due copie identiche.
+static std::array<float, sculpt::stageCount> collapseDuplicateSources (
+    const std::array<const juce::AudioBuffer<float>*, sculpt::stageCount>& sources,
+    std::array<float, sculpt::stageCount> weights)
+{
+    for (int i = 0; i < sculpt::stageCount; ++i)
+    {
+        if (sources[(size_t) i] == nullptr) { weights[(size_t) i] = 0.0f; continue; }
+        for (int earlier = 0; earlier < i; ++earlier)
+            if (sources[(size_t) earlier] == sources[(size_t) i])
+            {
+                weights[(size_t) earlier] = std::hypot (weights[(size_t) earlier], weights[(size_t) i]);
+                weights[(size_t) i] = 0.0f;
+                break;
+            }
+    }
+    return weights;
+}
 
 //==============================================================================
 juce::AudioProcessorValueTreeState::ParameterLayout SculptDrumsProcessor::createLayout()
@@ -74,14 +95,13 @@ std::vector<SculptDrumsProcessor::Piece> SculptDrumsProcessor::makePlaceholderKi
         out[(size_t) p].note = notes[p];
         out[(size_t) p].gamma = gammas[p];
         out[(size_t) p].rr.setStart (p * 3);
-        out[(size_t) p].layers[0].resize (1);
-        out[(size_t) p].layers[1].resize (1);
-        out[(size_t) p].layers[2].resize (1);
+        for (auto& layer : out[(size_t) p].layers) layer.resize (1);
 
-        for (int k = 0; k < 3; ++k)
+        for (int k = 0; k < sculpt::stageCount; ++k)
         {
             auto& b = out[(size_t) p].layers[(size_t) k][0].buf;
-            const int n = (int) (lens[p][k] * (float) sr);
+            const int family = k <= 1 ? 0 : (k == sculpt::stageCount - 1 ? 2 : 1);
+            const int n = (int) (lens[p][family] * (float) sr);
             b.setSize (2, n);
             auto* d = b.getWritePointer (0);
             juce::Random rnd (1234 + p * 10 + k);
@@ -96,19 +116,19 @@ std::vector<SculptDrumsProcessor::Piece> SculptDrumsProcessor::makePlaceholderKi
                 {
                     ph += twoPi * (45.0f + 90.0f * std::exp (-t * 25.0f)) / (float) sr;
                     s = std::sin (ph) * std::exp (-t * 8.0f);
-                    if (k == 1) s = std::tanh (2.5f * s);
-                    if (k == 2) s = std::sin (twoPi * 52.0f * t) * std::exp (-t * 5.0f) + (i < 40 ? 0.5f : 0.0f);
+                    if (family == 1) s = std::tanh (2.5f * s);
+                    if (family == 2) s = std::sin (twoPi * 52.0f * t) * std::exp (-t * 5.0f) + (i < 40 ? 0.5f : 0.0f);
                 }
                 else if (p == 1)
                 {
-                    s = noise * std::exp (-t * (k == 2 ? 12.0f : 18.0f)) * 0.6f
-                      + std::sin (twoPi * (k == 2 ? 220.0f : 190.0f) * t) * std::exp (-t * 30.0f) * 0.5f;
-                    if (k == 1) s = std::tanh (2.0f * s);
+                    s = noise * std::exp (-t * (family == 2 ? 12.0f : 18.0f)) * 0.6f
+                      + std::sin (twoPi * (family == 2 ? 220.0f : 190.0f) * t) * std::exp (-t * 30.0f) * 0.5f;
+                    if (family == 1) s = std::tanh (2.0f * s);
                 }
                 else
                 {
                     const float hp = noise - prev; prev = noise;
-                    s = hp * std::exp (-t * (k == 0 ? 60.0f : k == 1 ? 45.0f : 35.0f)) * 0.5f;
+                    s = hp * std::exp (-t * (family == 0 ? 60.0f : family == 1 ? 45.0f : 35.0f)) * 0.5f;
                 }
                 d[i] = s;
             }
@@ -158,6 +178,34 @@ bool SculptDrumsProcessor::loadSample (juce::AudioFormatManager& fm, const juce:
     return true;
 }
 
+// OH e room dello stesso evento vengono sommati insieme al close, mantenendo
+// il loro offset temporale originale: non sono varianti round robin indipendenti.
+bool SculptDrumsProcessor::loadMicGroup (juce::AudioFormatManager& fm, const juce::File& base,
+                                         const juce::var& entry, double sr, juce::AudioBuffer<float>& out)
+{
+    if (! loadSample (fm, base.getChildFile (entry["file"].toString()), sr, out)) return false;
+
+    for (const auto& mic : { std::pair<const char*, float> { "oh", 0.25f },
+                             std::pair<const char*, float> { "room", 0.15f } })
+    {
+        const auto path = entry.getProperty (juce::Identifier (mic.first), {}).toString();
+        if (path.isEmpty()) continue;
+        juce::AudioBuffer<float> additional;
+        if (! loadSample (fm, base.getChildFile (path), sr, additional)) continue;
+
+        const int samples = juce::jmax (out.getNumSamples(), additional.getNumSamples());
+        juce::AudioBuffer<float> mixed (2, samples);
+        mixed.clear();
+        for (int ch = 0; ch < 2; ++ch)
+        {
+            mixed.copyFrom (ch, 0, out, ch, 0, out.getNumSamples());
+            mixed.addFrom (ch, 0, additional, ch, 0, additional.getNumSamples(), mic.second);
+        }
+        out = std::move (mixed);
+    }
+    return true;
+}
+
 static float earlyRms (const juce::AudioBuffer<float>& b, int win)
 {
     const int n = juce::jmin (win, b.getNumSamples());
@@ -194,25 +242,6 @@ void SculptDrumsProcessor::levelMatchGroup (std::vector<Sample>& g, double sr)
     }
 }
 
-// Versione "trattata" derivata dal naturale: saturazione in parallelo (compressione/colore),
-// a pari livello. Da sostituire con campioni trattati veri quando disponibili.
-juce::AudioBuffer<float> SculptDrumsProcessor::makeTreated (const juce::AudioBuffer<float>& in, double sr)
-{
-    juce::AudioBuffer<float> out (in);
-    const float drive = 3.0f, norm = 1.0f / std::tanh (drive);
-    for (int ch = 0; ch < 2; ++ch)
-    {
-        auto* d = out.getWritePointer (ch);
-        for (int i = 0; i < out.getNumSamples(); ++i)
-            d[i] = 0.75f * std::tanh (drive * d[i]) * norm + 0.25f * d[i];
-    }
-    const float ro = earlyRms (out, (int) (0.3 * sr));
-    if (ro > 1.0e-6f) out.applyGain (earlyRms (in, (int) (0.3 * sr)) / ro);
-    const float pk = out.getMagnitude (0, out.getNumSamples());
-    if (pk > 0.98f) out.applyGain (0.98f / pk);
-    return out;
-}
-
 void SculptDrumsProcessor::loadKit (double sr, juce::Thread& thread)
 {
     const auto root = juce::File::getSpecialLocation (juce::File::userMusicDirectory).getChildFile ("Sculpt Drums");
@@ -228,7 +257,8 @@ void SculptDrumsProcessor::loadKit (double sr, juce::Thread& thread)
     kitStatus = Loading;
     setKitMessage ("Caricamento campioni...");
     const auto json = juce::JSON::parse (kitFile);
-    auto* arr = json["pieces"].getArray();
+    const juce::var piecesArray = json["pieces"];
+    auto* arr = piecesArray.getArray();
     if (arr == nullptr)
     {
         kitStatus = Error;
@@ -236,7 +266,14 @@ void SculptDrumsProcessor::loadKit (double sr, juce::Thread& thread)
         return;
     }
 
-    const auto folder = root.getChildFile (json.getProperty ("sampleFolder", "Campioni").toString());
+    if ((int) json.getProperty ("version", 0) != 2)
+    {
+        kitStatus = Error;
+        setKitMessage ("kit.json vecchio: serve il manifest a 6 stadi - suoni di prova");
+        return;
+    }
+
+    const auto folder = root.getChildFile (json.getProperty ("sampleFolder", ".").toString());
     juce::AudioFormatManager fm;
     fm.registerBasicFormats();
 
@@ -254,17 +291,21 @@ void SculptDrumsProcessor::loadKit (double sr, juce::Thread& thread)
         p.choke = (int) pv.getProperty ("choke", 0);
         p.rr.setStart ((int) np.size() * 3); // ogni pezzo parte da un punto diverso della sequenza
 
-        const char* names[3] = { "natural", "treated", "electronic" };
-        for (int layer = 0; layer < 3; ++layer)
+        const juce::var stagesArray = pv["stages"];
+        auto* stages = stagesArray.getArray();
+        if (stages == nullptr || stages->size() != sculpt::stageCount) continue;
+        for (int layer = 0; layer < sculpt::stageCount; ++layer)
         {
-            auto* list = pv[names[layer]].getArray();
+            const juce::var stageArray = (*stages)[layer];
+            auto* list = stageArray.getArray();
             if (list == nullptr) continue;
             for (auto& e : *list)
             {
                 if (thread.threadShouldExit()) return;
                 Sample s;
-                if (! loadSample (fm, folder.getChildFile (e["file"].toString()), sr, s.buf)) { ++missing; continue; }
-                if (auto* v = e["vel"].getArray(); v != nullptr && v->size() == 2)
+                if (! loadMicGroup (fm, folder, e, sr, s.buf)) { ++missing; continue; }
+                const juce::var velocityRange = e["vel"];
+                if (auto* v = velocityRange.getArray(); v != nullptr && v->size() == 2)
                 {
                     s.velLo = (int) (*v)[0];
                     s.velHi = (int) (*v)[1];
@@ -274,22 +315,13 @@ void SculptDrumsProcessor::loadKit (double sr, juce::Thread& thread)
             }
         }
 
-        if (p.layers[0].empty() && ! p.layers[2].empty()) p.layers[0] = p.layers[2]; // solo elettronico (es. clap)
-        if (p.layers[2].empty() && ! p.layers[0].empty()) p.layers[2] = p.layers[0]; // solo acustico
-        if (p.layers[0].empty()) continue;
-
-        levelMatchGroup (p.layers[0], sr);
-        levelMatchGroup (p.layers[2], sr);
-
-        if (p.layers[1].empty()) // trattato derivato dal naturale, stesse varianti e stesse gamme di velocity
-            for (auto& s : p.layers[0])
-            {
-                Sample t;
-                t.buf = makeTreated (s.buf, sr);
-                t.velLo = s.velLo; t.velHi = s.velHi;
-                p.layers[1].push_back (std::move (t));
-            }
-        else levelMatchGroup (p.layers[1], sr);
+        bool hasSample = false;
+        for (auto& layer : p.layers)
+        {
+            hasSample |= ! layer.empty();
+            levelMatchGroup (layer, sr);
+        }
+        if (! hasSample) continue;
 
         np.push_back (std::move (p));
     }
@@ -309,7 +341,10 @@ void SculptDrumsProcessor::loadKit (double sr, juce::Thread& thread)
     }
     loadedSr = sr;
     kitStatus = Loaded;
-    setKitMessage ("Kit: " + juce::String (loaded) + " campioni" + (missing > 0 ? ", " + juce::String (missing) + " mancanti" : juce::String()));
+    const auto expectedWavs = (int) json.getProperty ("sampleFiles", 0);
+    setKitMessage ("Kit: " + juce::String (loaded) + " eventi / "
+                   + juce::String (expectedWavs) + " WAV"
+                   + (missing > 0 ? ", " + juce::String (missing) + " mancanti" : juce::String()));
 }
 
 //==============================================================================
@@ -379,10 +414,6 @@ void SculptDrumsProcessor::trigger (int note, float velocity)
             if (v.pos > slot->pos) slot = &v; // altrimenti ruba la più vecchia
         }
 
-        const int iN = pickVariant (p, 0, v127);
-        const int iT = (p.layers[1].size() == p.layers[0].size() && iN >= 0) ? iN : pickVariant (p, 1, v127);
-        const int iE = pickVariant (p, 2, v127);
-
         slot->active = true;
         slot->piece = (int) pi;
         slot->pos = 0;
@@ -390,12 +421,31 @@ void SculptDrumsProcessor::trigger (int note, float velocity)
         slot->chokeGain = 1.0f;
         slot->vel = std::pow (velocity, 1.4f);
         slot->rrOffset = p.rr.next (pRange->load());
-        slot->src[0] = iN >= 0 ? &p.layers[0][(size_t) iN].buf : nullptr;
-        slot->src[1] = iT >= 0 ? &p.layers[1][(size_t) iT].buf : nullptr;
-        slot->src[2] = iE >= 0 ? &p.layers[2][(size_t) iE].buf : nullptr;
-
         const auto w = sculpt::morphWeights (sculpt::applyOffset (morphSm.getCurrentValue(), slot->rrOffset), p.gamma);
-        slot->w[0] = w.natural; slot->w[1] = w.treated; slot->w[2] = w.electronic;
+        slot->src.fill (nullptr);
+        std::array<int, sculpt::stageCount> pickedVariants;
+        pickedVariants.fill (-1);
+        for (int stage = 0; stage < sculpt::stageCount; ++stage)
+        {
+            int nearest = -1, distance = sculpt::stageCount;
+            // Le famiglie non disponibili per un pezzo usano lo stadio più vicino.
+            // Non si creano duplicati in RAM e i sei punti MORPH restano validi.
+            for (int s = 0; s < sculpt::stageCount; ++s)
+                if (! p.layers[(size_t) s].empty() && std::abs (s - stage) < distance)
+                {
+                    nearest = s;
+                    distance = std::abs (s - stage);
+                }
+            if (nearest >= 0)
+            {
+                auto& selected = pickedVariants[(size_t) nearest];
+                if (selected < 0) selected = pickVariant (p, nearest, v127);
+                const int v = selected;
+                if (v >= 0)
+                    slot->src[(size_t) stage] = &p.layers[(size_t) nearest][(size_t) v].buf;
+            }
+        }
+        slot->w = collapseDuplicateSources (slot->src, w.stage);
         rrStep = p.rr.step();
         return;
     }
@@ -413,34 +463,37 @@ void SculptDrumsProcessor::renderSegment (juce::AudioBuffer<float>& buf, int sta
     for (auto& v : voices)
     {
         if (! v.active) continue;
-        auto& p = pieces[(size_t) v.piece];
-        const auto w = sculpt::morphWeights (sculpt::applyOffset (m1, v.rrOffset), p.gamma);
-        const float w1[3] = { w.natural, w.treated, w.electronic };
-
-        const float* dl[3] = { nullptr, nullptr, nullptr };
-        const float* dr[3] = { nullptr, nullptr, nullptr };
-        int len[3] = { 0, 0, 0 };
-        for (int k = 0; k < 3; ++k)
-            if (v.src[k] != nullptr)
+        const auto& p = pieces[(size_t) v.piece];
+        // L'offset scelto dal round robin rimane fisso per il colpo,
+        // mentre il target MORPH può seguire l'automazione della DAW.
+        const auto targetWeights = collapseDuplicateSources (
+            v.src, sculpt::morphWeights (sculpt::applyOffset (m1, v.rrOffset), p.gamma).stage);
+        std::array<const float*, sculpt::stageCount> dl {}, dr {};
+        std::array<int, sculpt::stageCount> len {};
+        int longest = 0;
+        for (int k = 0; k < sculpt::stageCount; ++k)
+            if (v.src[(size_t) k] != nullptr)
             {
-                dl[k] = v.src[k]->getReadPointer (0);
-                dr[k] = v.src[k]->getReadPointer (1);
-                len[k] = v.src[k]->getNumSamples();
+                dl[(size_t) k] = v.src[(size_t) k]->getReadPointer (0);
+                dr[(size_t) k] = v.src[(size_t) k]->getReadPointer (1);
+                len[(size_t) k] = v.src[(size_t) k]->getNumSamples();
+                longest = juce::jmax (longest, len[(size_t) k]);
             }
 
         bool dead = false;
-        // pesi interpolati nel blocco: MORPH segue anche i colpi già partiti, senza salti
+        // Crossfade regolare anche durante il decadimento se MORPH cambia.
         for (int i = 0; i < n && ! dead; ++i)
         {
             const float t = (float) i / (float) n;
             const int idx = v.pos + i;
             float sl = 0.0f, sr = 0.0f;
-            for (int k = 0; k < 3; ++k)
-                if (idx < len[k])
+            for (int k = 0; k < sculpt::stageCount; ++k)
+                if (idx < len[(size_t) k])
                 {
-                    const float g = v.w[k] + (w1[k] - v.w[k]) * t;
-                    sl += g * dl[k][idx];
-                    sr += g * dr[k][idx];
+                    const float g = v.w[(size_t) k]
+                                  + (targetWeights[(size_t) k] - v.w[(size_t) k]) * t;
+                    sl += g * dl[(size_t) k][idx];
+                    sr += g * dr[(size_t) k][idx];
                 }
             float g = v.vel * (v0 + (v1 - v0) * t) * v.chokeGain;
             if (v.choking)
@@ -453,12 +506,14 @@ void SculptDrumsProcessor::renderSegment (juce::AudioBuffer<float>& buf, int sta
         }
 
         v.pos += n;
-        for (int k = 0; k < 3; ++k) v.w[k] = w1[k];
-        if (dead || v.pos >= juce::jmax (len[0], len[1], len[2])) v.active = false;
+        v.w = targetWeights;
+        if (dead || v.pos >= longest) v.active = false;
     }
 
     const auto cw = sculpt::morphWeights (m1, 1.0f);
-    layerWeight[0] = cw.natural; layerWeight[1] = cw.treated; layerWeight[2] = cw.electronic;
+    layerWeight[0] = juce::jmin (1.0f, cw.stage[0] + cw.stage[1]);
+    layerWeight[1] = juce::jmin (1.0f, cw.stage[2] + cw.stage[3] + cw.stage[4]);
+    layerWeight[2] = cw.stage[5];
 }
 
 void SculptDrumsProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midi)

@@ -18,15 +18,22 @@ Tutto il materiale confluirà in un unico kit ibrido. Ogni elemento potrà esser
 
 ## 2. Manopola MORPH — Il cuore dello strumento
 
-Corsa da 0 a 100, tre regioni timbriche:
+Corsa da 0 a 100, tre famiglie timbriche. L'archivio ordinato del 2026
+introduce sei riferimenti distinti, preservati dal motore VST3:
 
-| Posizione       | Carattere sonoro                                        |
-| --------------- | ------------------------------------------------------- |
-| 0               | Acustico naturale, poco trattato                        |
-| Verso il centro | Progressivo aumento delle componenti acustiche trattate |
-| 50              | Acustico trattato come riferimento centrale             |
-| Verso 100       | Progressiva introduzione delle componenti elettroniche  |
-| 100             | Completamente elettronico                               |
+| MORPH | Archivio | Carattere |
+|---:|---|---|
+| 0 | `01 Natural ` | Acustico naturale 1 |
+| 20 | `02 Natural` | Acustico naturale 2 |
+| 40 | `03 processed` | Acustico trattato 1 |
+| 60 | `04 processed` | Acustico trattato 2 |
+| 80 | `05 processed` | Acustico trattato 3 |
+| 100 | `06 Electro` | Elettronico |
+
+Le dissolvenze sono a potenza costante fra due riferimenti adiacenti;
+la curva per pezzo cambia l'andamento della dissolvenza senza spostare
+le sei posizioni fisse. Quando un particolare elemento non è presente
+in uno stadio si usa il campione del riferimento disponibile più vicino.
 
 La transizione deve essere continua, senza cambi improvvisi di suono.
 
