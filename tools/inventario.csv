@@ -304,6 +304,8 @@ Electro/Percussion/Tambourine Inception.wav,electronic,percussion,tambourine inc
 Electro/Percussion/Tambourine Petroleum.wav,electronic,percussion,tambourine petroleum,,,,2,44100,24,pcm,0.172,-2.1
 Electro/Percussion/Tambourine Want2Survive.wav,electronic,percussion,tambourine want2survive,,,,2,44100,24,pcm,0.144,-1.7
 Electro/Percussion/TimbaleRoll Percman.wav,electronic,percussion,timbaleroll percman,,,,2,44100,24,pcm,2.0,-1.7
+Electro/Cymbal/Ride Atomized 1.wav,electronic,ride,ride atomized,1,,,2,44100,24,pcm,1.954,-1.7
+Electro/Cymbal/Ride Atomized 2.wav,electronic,ride,ride atomized,2,,,2,44100,24,pcm,4.885,-1.7
 Electro/Cymbal/Ride BasketCase 1.wav,electronic,ride,ride basketcase,1,,,2,44100,24,pcm,1.371,-1.7
 Electro/Cymbal/Ride BasketCase 2.wav,electronic,ride,ride basketcase,2,,,2,44100,24,pcm,0.639,-0.9
 Electro/Cymbal/Ride Crypt.wav,electronic,ride,ride crypt,,,,2,44100,24,pcm,0.639,-1.3
@@ -432,7 +434,5 @@ Electro/Snare/Snare Warewolf 3.wav,electronic,snare,warewolf,3,,,2,44100,24,pcm,
 Electro/Snare/SnareRoll DarkDub 1.wav,electronic,snare,snareroll darkdub,1,,,2,44100,24,pcm,0.398,-0.0
 Electro/Snare/SnareRoll DarkDub 2.wav,electronic,snare,snareroll darkdub,2,,,2,44100,24,pcm,0.343,-1.9
 Electro/Percussion/Timpani SoTek DS.wav,electronic,timpano,timpani sotek ds,,,,2,44100,24,pcm,4.746,-3.0
-Electro/Cymbal/Ride Atomized 1.wav,electronic,tom,ride atomized,1,,,2,44100,24,pcm,1.954,-1.7
-Electro/Cymbal/Ride Atomized 2.wav,electronic,tom,ride atomized,2,,,2,44100,24,pcm,4.885,-1.7
 Electro/Tom/Tom BasketCase.wav,electronic,tom,basketcase,,,,1,44100,24,pcm,0.868,-0.0
 Electro/Tom/Tom Percman.wav,electronic,tom,percman,,,,2,44100,24,pcm,4.132,-1.7

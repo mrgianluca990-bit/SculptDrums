@@ -108,6 +108,10 @@ void SculptDrumsEditor::paint (juce::Graphics& g)
     g.setFont (juce::Font (juce::FontOptions (15.0f)));
     g.drawText ("S C U L P T   D R U M S", getLocalBounds().removeFromTop (44), juce::Justification::centred);
 
+    g.setColour (cream.withAlpha (0.35f));
+    g.setFont (juce::Font (juce::FontOptions (11.0f)));
+    g.drawText (proc.getKitMessage(), 20, 44, getWidth() - 40, 16, juce::Justification::centred);
+
     // punti round robin
     const int step = proc.rrStep.load() % 5;
     for (int i = 0; i < 5; ++i)

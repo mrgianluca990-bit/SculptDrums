@@ -44,7 +44,7 @@ def read_wav(path):
 
 PIECES = [  # (regex sul nome, pezzo)
     (r'hh op|open', 'hihat_open'), (r'foot', 'hihat_foot'), (r'closedhh|hh close|^hh\b|hh f', 'hihat_closed'),
-    (r'kick|^k\b|^k ', 'kick'), (r'snare|^s \d|^s\.|rim', 'snare'), (r'tom2|tom', 'tom'),
+    (r'kick|^k\b|^k ', 'kick'), (r'snare|^s \d|^s\.|rim', 'snare'), (r'\btom', 'tom'),
     (r'crash', 'crash'), (r'ride', 'ride'), (r'splash', 'splash'), (r'clap', 'clap'),
     (r'timp|tim ', 'timpano'), (r'rullo', 'roll'), (r'shaker', 'shaker'), (r'combo', 'combo'),
     (r'perc|cowbell|conga|bongo', 'percussion'), (r'cymbal', 'cymbal'),

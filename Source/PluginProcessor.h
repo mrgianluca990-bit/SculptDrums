@@ -1,12 +1,16 @@
 #pragma once
 #include <juce_audio_processors/juce_audio_processors.h>
+#include <juce_audio_formats/juce_audio_formats.h>
 #include <array>
+#include <memory>
+#include <vector>
 #include "MorphEngine.h"
 
 class SculptDrumsProcessor : public juce::AudioProcessor
 {
 public:
     SculptDrumsProcessor();
+    ~SculptDrumsProcessor() override;
 
     void prepareToPlay (double sampleRate, int samplesPerBlock) override;
     void releaseResources() override {}
@@ -20,7 +24,7 @@ public:
     bool acceptsMidi() const override { return true; }
     bool producesMidi() const override { return false; }
     bool isMidiEffect() const override { return false; }
-    double getTailLengthSeconds() const override { return 2.0; }
+    double getTailLengthSeconds() const override { return 3.0; }
 
     int getNumPrograms() override { return 1; }
     int getCurrentProgram() override { return 0; }
@@ -31,6 +35,8 @@ public:
     void getStateInformation (juce::MemoryBlock&) override;
     void setStateInformation (const void*, int) override;
 
+    juce::String getKitMessage() const;
+
     juce::AudioProcessorValueTreeState apvts;
 
     // letti dalla GUI
@@ -39,35 +45,64 @@ public:
     std::atomic<float> layerWeight[3];
 
 private:
+    enum KitStatus { Placeholder = 0, Loading, Loaded, Error };
+
+    struct Sample
+    {
+        juce::AudioBuffer<float> buf; // sempre stereo, alla frequenza dell'host
+        int velLo = 0, velHi = 127;
+    };
+
     struct Piece
     {
-        int note = 36;
+        juce::String id;
+        int note = -1;
         float gamma = 1.0f;
-        std::array<juce::AudioBuffer<float>, 3> layers; // naturale, trattato, elettronico
-        sculpt::RoundRobin rr;
+        int choke = 0;                                  // 0 = nessun gruppo
+        std::array<std::vector<Sample>, 3> layers;      // naturale, trattato, elettronico
+        std::array<int, 3> rrCounter { 0, 0, 0 };      // rotazione varianti campione
+        sculpt::RoundRobin rr;                          // round robin delle miscele
     };
 
     struct Voice
     {
         bool active = false;
-        int piece = 0;
-        int pos = 0;
+        int piece = 0, pos = 0;
         float vel = 1.0f;
         float rrOffset = 0.0f; // fissato al colpo, resta durante il decadimento
         float w[3] { 1, 0, 0 };
+        const juce::AudioBuffer<float>* src[3] { nullptr, nullptr, nullptr };
+        bool choking = false;
+        float chokeGain = 1.0f;
     };
 
+    class KitLoader;
+
     static juce::AudioProcessorValueTreeState::ParameterLayout createLayout();
-    void buildPlaceholderKit (double sr);
+    static std::vector<Piece> makePlaceholderKit (double sr);
+    static bool loadSample (juce::AudioFormatManager&, const juce::File&, double sr, juce::AudioBuffer<float>& out);
+    static void levelMatchGroup (std::vector<Sample>&, double sr);
+    static juce::AudioBuffer<float> makeTreated (const juce::AudioBuffer<float>& in, double sr);
+    static int pickVariant (Piece&, int layer, int vel127);
+
+    void loadKit (double sr, juce::Thread& thread);
+    void setKitMessage (const juce::String&);
     void trigger (int note, float velocity);
     void renderSegment (juce::AudioBuffer<float>&, int start, int n);
 
-    std::array<Piece, 3> pieces;
+    std::vector<Piece> pieces;
+    juce::SpinLock kitLock;
     std::array<Voice, 32> voices;
     juce::SmoothedValue<float> morphSm, volSm;
     std::atomic<float>* pMorph = nullptr;
     std::atomic<float>* pVolume = nullptr;
     std::atomic<float>* pRange = nullptr;
+
+    std::unique_ptr<KitLoader> loader;
+    std::atomic<int> kitStatus { Placeholder };
+    std::atomic<double> loadedSr { 0.0 };
+    juce::CriticalSection msgLock;
+    juce::String kitMessage;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (SculptDrumsProcessor)
 };

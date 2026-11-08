@@ -1,0 +1,752 @@
+{
+ "version": 1,
+ "sampleFolder": "Campioni",
+ "pieces": [
+  {
+   "id": "kick",
+   "note": 36,
+   "gamma": 1.0,
+   "choke": 0,
+   "natural": [
+    {
+     "file": "CAMPIONI/KICK.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "CAMPIONI/Kick Figo.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "Mindance/k 1.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "Mindance/k 2.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "Mindance/k 3.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "Mindance/k 4.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "NEW/Kick New.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "very new/new_Kick 1.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "very new/new_Kick High.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "very new/new_Kick mp.wav",
+     "vel": [
+      71,
+      100
+     ]
+    },
+    {
+     "file": "very new/new_Kick p.wav",
+     "vel": [
+      41,
+      70
+     ]
+    },
+    {
+     "file": "very new/new_Kick pp.wav",
+     "vel": [
+      0,
+      40
+     ]
+    }
+   ],
+   "treated": [],
+   "electronic": [
+    {
+     "file": "Electro/Kick/Kick Want2Survive DS 1.wav"
+    },
+    {
+     "file": "Electro/Kick/Kick Want2Survive DS 2.wav"
+    },
+    {
+     "file": "Electro/Kick/Kick RattleSnakes 1.wav"
+    },
+    {
+     "file": "Electro/Kick/Kick RattleSnakes 2.wav"
+    }
+   ]
+  },
+  {
+   "id": "snare",
+   "note": 38,
+   "gamma": 0.85,
+   "choke": 0,
+   "natural": [
+    {
+     "file": "CAMPIONI/SNARE.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "Mindance/S 1.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "Mindance/S 2.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "Mindance/S 3.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "Mindance/S 4.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "NEW/Snare trig NEW.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "very new/new_Snare 1.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "very new/new_Snare 3.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "very new/new_Snare 4.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "very new/new_Snare 5.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "very new/new_Snare 8.wav",
+     "vel": [
+      0,
+      127
+     ]
+    }
+   ],
+   "treated": [],
+   "electronic": [
+    {
+     "file": "Electro/Snare/Snare SoTek DS 1.wav"
+    },
+    {
+     "file": "Electro/Snare/Snare SoTek DS 2.wav"
+    },
+    {
+     "file": "Electro/Snare/Snare Cracked 1.wav"
+    },
+    {
+     "file": "Electro/Snare/Snare Cracked 2.wav"
+    }
+   ]
+  },
+  {
+   "id": "snare_rim",
+   "note": 37,
+   "gamma": 0.85,
+   "choke": 0,
+   "natural": [
+    {
+     "file": "very new/new_Snare 2 rim.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "very new/new_Snare 6 rim.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "very new/new_Snare 9 bordo.wav",
+     "vel": [
+      0,
+      127
+     ]
+    }
+   ],
+   "treated": [],
+   "electronic": [
+    {
+     "file": "Electro/Snare/Rim GravelTrap 1.wav"
+    },
+    {
+     "file": "Electro/Snare/Rim GravelTrap 2.wav"
+    },
+    {
+     "file": "Electro/Snare/Rim Want2Survive 1.wav"
+    },
+    {
+     "file": "Electro/Snare/Rim Want2Survive 2.wav"
+    }
+   ]
+  },
+  {
+   "id": "clap",
+   "note": 39,
+   "gamma": 1.0,
+   "choke": 0,
+   "natural": [],
+   "treated": [],
+   "electronic": [
+    {
+     "file": "Clap/Clap1_1.wav"
+    },
+    {
+     "file": "Clap/Clap1_2.wav"
+    },
+    {
+     "file": "Clap/Clap1_3.wav"
+    },
+    {
+     "file": "Clap/Clap1_4.wav"
+    }
+   ],
+   "electronicOnly": true
+  },
+  {
+   "id": "hihat_closed",
+   "note": 42,
+   "gamma": 1.2,
+   "choke": 1,
+   "natural": [
+    {
+     "file": "Mindance/hh 1.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "Mindance/hh 2.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "Mindance/hh 3.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "Mindance/hh 4.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "Mindance/hh 5.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "Mindance/hh 6.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "Mindance/hh F long 1.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "Mindance/hh F long 2.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "Mindance/hh F.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "very new/new_HH CLOSE.wav",
+     "vel": [
+      0,
+      127
+     ]
+    }
+   ],
+   "treated": [],
+   "electronic": [
+    {
+     "file": "Electro/HiHat/ClosedHH Collapse 1.wav"
+    },
+    {
+     "file": "Electro/HiHat/ClosedHH Collapse 2.wav"
+    },
+    {
+     "file": "Electro/HiHat/ClosedHH SteamPipe 1.wav"
+    },
+    {
+     "file": "Electro/HiHat/ClosedHH SteamPipe 2.wav"
+    }
+   ]
+  },
+  {
+   "id": "hihat_foot",
+   "note": 44,
+   "gamma": 1.2,
+   "choke": 1,
+   "natural": [
+    {
+     "file": "very new/new_HH foot.wav",
+     "vel": [
+      0,
+      127
+     ]
+    }
+   ],
+   "treated": [],
+   "electronic": [
+    {
+     "file": "Electro/HiHat/ClosedHH Collapse 1.wav"
+    },
+    {
+     "file": "Electro/HiHat/ClosedHH Collapse 2.wav"
+    },
+    {
+     "file": "Electro/HiHat/ClosedHH SteamPipe 1.wav"
+    },
+    {
+     "file": "Electro/HiHat/ClosedHH SteamPipe 2.wav"
+    }
+   ]
+  },
+  {
+   "id": "hihat_open",
+   "note": 46,
+   "gamma": 1.2,
+   "choke": 1,
+   "natural": [
+    {
+     "file": "Mindance/hh op 1.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "Mindance/hh op 2.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "Mindance/hh op 3.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "Mindance/hh op bell.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "very new/new_HH open.wav",
+     "vel": [
+      0,
+      127
+     ]
+    }
+   ],
+   "treated": [],
+   "electronic": [
+    {
+     "file": "Electro/HiHat/OpenHH Forsaken 1.wav"
+    },
+    {
+     "file": "Electro/HiHat/OpenHH Forsaken 2.wav"
+    },
+    {
+     "file": "Electro/HiHat/OpenHH TokyoDrift 1.wav"
+    },
+    {
+     "file": "Electro/HiHat/OpenHH TokyoDrift 2.wav"
+    }
+   ]
+  },
+  {
+   "id": "tom",
+   "note": 45,
+   "gamma": 1.0,
+   "choke": 0,
+   "natural": [
+    {
+     "file": "CAMPIONI/TOM1.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "CAMPIONI/TOM2.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "Mindance/tom 1.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "Mindance/tom 2.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "Mindance/tom2 1.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "Mindance/tom2 2.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "very new/new_tom 1.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "very new/new_tom 2.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "very new/new_tom 3.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "very new/new_tom 4.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "very new/new_tom 5.wav",
+     "vel": [
+      0,
+      127
+     ]
+    }
+   ],
+   "treated": [],
+   "electronic": [
+    {
+     "file": "Electro/Tom/Tom Percman.wav"
+    },
+    {
+     "file": "Electro/Tom/Tom BasketCase.wav"
+    }
+   ]
+  },
+  {
+   "id": "crash",
+   "note": 49,
+   "gamma": 1.1,
+   "choke": 0,
+   "natural": [
+    {
+     "file": "Mindance/Crash1 1.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "Mindance/Crash1 2.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "Mindance/Crash2 1.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "Mindance/Crash2 2.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "very new/new_Crash1.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "very new/new_Crash2.wav",
+     "vel": [
+      0,
+      127
+     ]
+    }
+   ],
+   "treated": [],
+   "electronic": [
+    {
+     "file": "Electro/Cymbal/Cymbal Falling.wav"
+    },
+    {
+     "file": "Electro/Cymbal/Cymbal Eclipse.wav"
+    },
+    {
+     "file": "Electro/Cymbal/Cymbal ReachingOut.wav"
+    },
+    {
+     "file": "Electro/Cymbal/Cymbal Warewolf.wav"
+    }
+   ]
+  },
+  {
+   "id": "ride",
+   "note": 51,
+   "gamma": 1.1,
+   "choke": 0,
+   "natural": [
+    {
+     "file": "Mindance/ride 1.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "Mindance/ride 2.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "Mindance/ride 3.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "Mindance/ride 4.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "Mindance/ride 5.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "Mindance/ride bell 1.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "Mindance/ride bell 2.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "very new/new_Ride.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "very new/new_Ride_bell.wav",
+     "vel": [
+      0,
+      127
+     ]
+    }
+   ],
+   "treated": [],
+   "electronic": [
+    {
+     "file": "Electro/Cymbal/Ride Atomized 1.wav"
+    },
+    {
+     "file": "Electro/Cymbal/Ride Atomized 2.wav"
+    },
+    {
+     "file": "Electro/Cymbal/Ride BasketCase 1.wav"
+    },
+    {
+     "file": "Electro/Cymbal/Ride BasketCase 2.wav"
+    }
+   ]
+  },
+  {
+   "id": "splash",
+   "note": 55,
+   "gamma": 1.1,
+   "choke": 0,
+   "natural": [
+    {
+     "file": "very new/new_Splash1.wav",
+     "vel": [
+      0,
+      127
+     ]
+    },
+    {
+     "file": "very new/new_Splash2.wav",
+     "vel": [
+      0,
+      127
+     ]
+    }
+   ],
+   "treated": [],
+   "electronic": [
+    {
+     "file": "Electro/Cymbal/Cymbal Doomsday.wav"
+    },
+    {
+     "file": "Electro/Cymbal/Cymbal Petroleum.wav"
+    },
+    {
+     "file": "Electro/Cymbal/Cymbal Caustic.wav"
+    },
+    {
+     "file": "Electro/Cymbal/Cymbal Gravity.wav"
+    }
+   ]
+  }
+ ],
+ "unassignedAcoustic": [
+  "CAMPIONI/Rullo figo.wav",
+  "CAMPIONI/Rullo.wav",
+  "CAMPIONI/TIMPANO1.wav",
+  "CAMPIONI/TIMPANO2.wav",
+  "CAMPIONI/rullo2.wav",
+  "Mindance/Tim 1.wav",
+  "Mindance/Tim 2.wav"
+ ]
+}

@@ -35,6 +35,7 @@ target_compile_definitions(SculptDrums PUBLIC
 target_link_libraries(SculptDrums
   PRIVATE
     juce::juce_audio_utils
+    juce::juce_audio_formats
     juce::juce_dsp
   PUBLIC
     juce::juce_recommended_config_flags
