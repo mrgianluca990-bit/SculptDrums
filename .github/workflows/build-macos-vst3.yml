@@ -1,0 +1,46 @@
+name: Sculpt Drums VST3 macOS
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-15
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure
+        run: |
+          cmake -S . -B build -G Xcode \
+            -DCMAKE_OSX_ARCHITECTURES="arm64;x86_64" \
+            -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0
+
+      - name: Build VST3
+        run: |
+          cmake --build build \
+            --config Release \
+            --target SculptDrums_VST3 \
+            --parallel 4
+
+      - name: Package VST3
+        run: |
+          bundle="$(find build -type d -name '*.vst3' -print -quit)"
+          test -n "$bundle"
+          mkdir -p dist
+          codesign --force --deep --sign - "$bundle"
+          ditto -c -k --keepParent "$bundle" dist/SculptDrums-VST3-macOS.zip
+
+      - name: Upload VST3
+        uses: actions/upload-artifact@v4
+        with:
+          name: SculptDrums-VST3-macOS
+          path: dist/SculptDrums-VST3-macOS.zip
+          retention-days: 30
