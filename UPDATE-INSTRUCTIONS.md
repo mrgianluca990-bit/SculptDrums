@@ -1,49 +1,47 @@
-# Sculpt Drums — aggiornamento a sei stadi
+# Sculpt Drums — aggiornamento con libreria integrata
 
-Questo pacchetto contiene **solo sorgenti e manifest**; nessun WAV viene
-pubblicato su GitHub. Conservare lo ZIP originale `Sculpt Drums.zip` sul Mac.
+Questo pacchetto contiene **codice, kit/kit.json e 444 WAV** distribuiti in
+`Samples/`. La build GitHub Actions li incorpora nel VST3 macOS.
 
-## A. Aggiornare il repository
+## A. Pubblicare nel repository (da Terminale sul Mac)
 
-1. Scaricare e scompattare `SculptDrums-six-stage-update.zip`.
-2. Se non esiste già una copia locale, crearla con
-   `git clone https://github.com/mrgianluca990-bit/SculptDrums.git`.
-3. Copiare i file e le sottocartelle contenuti nel pacchetto **dentro la copia
-   locale del repository SculptDrums**, preservando i percorsi `Source/`,
-   `tools/`, `kit/`, `docs/`. Non eliminare `.github/` o `CMakeLists.txt`.
-4. Nella cartella del repository eseguire:
+1. Clona, se necessario: `git clone https://github.com/mrgianluca990-bit/SculptDrums.git`.
+2. Scompatta `SculptDrums-complete-library-update.zip` e copia **il contenuto**
+   sopra la cartella locale `SculptDrums`, senza cancellare gli altri file.
+3. Dal Terminale nella cartella del repository esegui:
 
    ```sh
-   git add README.md UPDATE-INSTRUCTIONS.md .gitignore Source/ docs/SPECIFICHE.md kit/kit.json tools/build_ordered_kit.py tools/audit_install.py tools/test_ordered_kit.py tools/test_morph.cpp
-   git commit -m "feat(drums): six ordered morph stages and 444 sample manifest"
+   python3 tools/audit_install.py .
+   git add CMakeLists.txt .github/workflows/build-macos-vst3.yml README.md \
+     UPDATE-INSTRUCTIONS.md Source/ docs/ kit/ tools/ Samples/ .gitignore
+   git commit -m "feat(drums): embed all 444 WAV in VST3"
    git push origin main
    ```
 
-5. Il push su `main` attiverà la GitHub Action VST3 già presente. Attendere
-   il completamento con esito verde e scaricare l'artifact della nuova build.
+   La verifica deve indicare `WAV nel manifest: 444` e `WAV mancanti: 0`.
 
-## B. Preparare la libreria sul Mac
+## B. Installare il nuovo VST3
 
-1. Scompattare l'archivio audio originale in `~/Music/` in modo da ottenere
-   `~/Music/Sculpt Drums/01 Natural `, `02 Natural`, ..., `06 Electro`.
-2. **Sostituire solo** `~/Music/Sculpt Drums/kit.json` con il nuovo `kit/kit.json`.
-3. Da Terminale, dentro la copia del repository, eseguire:
+1. Apri GitHub → Actions → ultima build `Sculpt Drums VST3 macOS`.
+2. Quando il run è verde, scarica l'artifact `SculptDrums-VST3-macOS`.
+3. Estrai `Sculpt Drums.vst3` dallo ZIP (se necessario, da un secondo ZIP interno).
+4. Chiudi la DAW e sostituisci il VST3 nella cartella `/Library/Audio/Plug-Ins/VST3/`.
+5. Riavvia Reaper, rifai la scansione dei plugin e inserisci **Sculpt Drums**
+   come strumento virtuale su una traccia MIDI.
+6. Aspetta il caricamento in background e verifica lo stato:
+   `Kit: ... eventi / 444 WAV`, senza campioni mancanti.
 
-   ```sh
-   python3 tools/audit_install.py "$HOME/Music/Sculpt Drums"
-   ```
+Il plugin contiene già tutti i WAV. **Non serve** la cartella
+`~/Music/Sculpt Drums/`.
 
-   Il risultato atteso è `WAV nel manifest: 444` e `WAV mancanti: 0`.
+## C. Test da effettuare
 
-## C. Installare il VST3 aggiornato
+- Suona MIDI 36 (kick), 38 (snare), 42 (hi-hat closed).
+- Muovi MORPH nelle posizioni 0, 20, 40, 60, 80 e 100.
+- Verifica le differenze acustiche a sinistra ed elettroniche a destra.
+- Prova i ribattuti e il round robin, il volume e il meter.
 
-1. Estrarre il nuovo artifact GitHub Actions (a volte ci sono due ZIP annidati).
-2. Chiudere Reaper e sostituire la versione precedente di `Sculpt Drums.vst3`
-   nella cartella `/Library/Audio/Plug-Ins/VST3/` oppure in quella dell'utente.
-3. Se macOS blocca il **nostro plugin non notarizzato**, seguire la procedura
-   di autorizzazione specifica (non disabilitare Gatekeeper per tutto il Mac).
-4. Aprire Reaper, eseguire la scansione VST e verificare le note 36 (cassa),
-   38 (rullante), 42 (hi-hat chiuso). Suonare ad ogni riferimento MORPH:
-   0, 20, 40, 60, 80, 100.
-
-La build VST3 e l'ascolto in DAW **restano da verificare** dopo il commit.
+La prima compilazione macOS e il funzionamento nella DAW **vanno verificati**
+dopo il push. La firma ad hoc non equivale alla notarizzazione Apple: se
+macOS blocca il plugin, autorizza il singolo file, senza disabilitare
+Gatekeeper globalmente.

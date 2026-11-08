@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Crea il kit a sei stadi dall'archivio personale Sculpt Drums.
+"""Crea il kit a sei stadi dai WAV inclusi nel repository.
 
 Uso:
     python3 tools/build_ordered_kit.py '/percorso/Sculpt Drums.zip' -o kit/kit.json
-    python3 tools/build_ordered_kit.py '~/Music/Sculpt Drums' -o kit/kit.json
+    python3 tools/build_ordered_kit.py Samples -o kit/kit.json
 
-I WAV restano sul Mac, in ~/Music/Sculpt Drums/. Non vengono copiati nel repo.
+I percorsi nel manifest sono relativi alla cartella Samples inclusa nel VST3.
 """
 
 import argparse
@@ -16,7 +16,7 @@ from collections import Counter
 from pathlib import Path
 
 STAGES = (
-    "01 Natural ",  # lo spazio finale è realmente presente nel nome dentro lo ZIP
+    "01 Natural",  # nello ZIP originale c'è uno spazio finale, qui normalizzato
     "02 Natural",
     "03 processed",
     "04 processed",
@@ -98,7 +98,18 @@ def classify(stage: int, relative: str) -> str:
     raise ValueError(f"Nessun pezzo MIDI identificato per {relative}")
 
 
+def canonical_path(relative):
+    """Rimuove solo lo spazio finale della prima cartella dello ZIP originale."""
+    parts = relative.split("/", 1)
+    if len(parts) == 2 and parts[0] == "01 Natural ":
+        return "01 Natural/" + parts[1]
+    return relative
+
+
 def make_kit(wav_names):
+    wav_names = [canonical_path(name) for name in wav_names]
+    if len(wav_names) != len(set(wav_names)):
+        raise ValueError("Due file collidono dopo la normalizzazione dei percorsi")
     samples = {name for name in wav_names}
     entries = {(piece, stage): [] for piece, *_ in PIECES for stage in range(6)}
     assigned = set()
@@ -143,7 +154,7 @@ def make_kit(wav_names):
     if Counter(referenced) != Counter(samples):
         raise ValueError(f"File persi o doppi: {Counter(samples) - Counter(referenced)}")
 
-    return dict(version=2, sampleFolder=".",
+    return dict(version=2, sampleFolder="Samples",
                 morphStages=[dict(name=name, position=i * 20) for i, name in enumerate(STAGES)],
                 pieces=pieces, sampleFiles=len(samples))
 

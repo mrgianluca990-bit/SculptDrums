@@ -1,9 +1,9 @@
 {
   "version": 2,
-  "sampleFolder": ".",
+  "sampleFolder": "Samples",
   "morphStages": [
     {
-      "name": "01 Natural ",
+      "name": "01 Natural",
       "position": 0
     },
     {
@@ -36,14 +36,14 @@
       "stages": [
         [
           {
-            "oh": "01 Natural /Indra Kick High over.wav",
-            "room": "01 Natural /Indra Kick High room.wav",
-            "file": "01 Natural /Indra Kick High.wav"
+            "oh": "01 Natural/Indra Kick High over.wav",
+            "room": "01 Natural/Indra Kick High room.wav",
+            "file": "01 Natural/Indra Kick High.wav"
           },
           {
-            "oh": "01 Natural /Indra Kick low Over.wav",
-            "room": "01 Natural /Indra Kick low room.wav",
-            "file": "01 Natural /Indra Kick low.wav"
+            "oh": "01 Natural/Indra Kick low Over.wav",
+            "room": "01 Natural/Indra Kick low room.wav",
+            "file": "01 Natural/Indra Kick low.wav"
           }
         ],
         [
@@ -315,19 +315,19 @@
       "stages": [
         [
           {
-            "oh": "01 Natural /Indra Snare 1 Over.wav",
-            "room": "01 Natural /Indra Snare 1 Room.wav",
-            "file": "01 Natural /Indra Snare 1.wav"
+            "oh": "01 Natural/Indra Snare 1 Over.wav",
+            "room": "01 Natural/Indra Snare 1 Room.wav",
+            "file": "01 Natural/Indra Snare 1.wav"
           },
           {
-            "room": "01 Natural /Indra Snare 2 Room.wav",
-            "oh": "01 Natural /Indra Snare 2 over.wav",
-            "file": "01 Natural /Indra Snare 2.wav"
+            "room": "01 Natural/Indra Snare 2 Room.wav",
+            "oh": "01 Natural/Indra Snare 2 over.wav",
+            "file": "01 Natural/Indra Snare 2.wav"
           },
           {
-            "room": "01 Natural /Indra Snare 3 Room.wav",
-            "oh": "01 Natural /Indra Snare 3 over.wav",
-            "file": "01 Natural /Indra Snare 3.wav"
+            "room": "01 Natural/Indra Snare 3 Room.wav",
+            "oh": "01 Natural/Indra Snare 3 over.wav",
+            "file": "01 Natural/Indra Snare 3.wav"
           }
         ],
         [
@@ -1087,9 +1087,9 @@
       "stages": [
         [
           {
-            "room": "01 Natural /Indra Tom1 Room.wav",
-            "oh": "01 Natural /Indra Tom1 over.wav",
-            "file": "01 Natural /Indra Tom1.wav"
+            "room": "01 Natural/Indra Tom1 Room.wav",
+            "oh": "01 Natural/Indra Tom1 over.wav",
+            "file": "01 Natural/Indra Tom1.wav"
           }
         ],
         [
@@ -1139,9 +1139,9 @@
       "stages": [
         [
           {
-            "oh": "01 Natural /Indra Timpano1 Over.wav",
-            "room": "01 Natural /Indra Timpano1 Room.wav",
-            "file": "01 Natural /Indra Timpano1.wav"
+            "oh": "01 Natural/Indra Timpano1 Over.wav",
+            "room": "01 Natural/Indra Timpano1 Room.wav",
+            "file": "01 Natural/Indra Timpano1.wav"
           }
         ],
         [

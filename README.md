@@ -3,51 +3,42 @@
 Un solo kit di batteria ibrida con MORPH continuo e round robin delle miscele.
 Per macOS, formato **VST3**, JUCE 8.
 
-## Libreria reale: sei stadi ordinati
+## Libreria integrata: sei stadi ordinati
 
-La cartella `Sculpt Drums` del nuovo archivio deve risiedere in
-`~/Music/Sculpt Drums/`, con il seguente ordine:
+Il repository include tutti i **444 WAV** nella cartella `Samples/`. La build
+macOS incorpora automaticamente `Samples/` e `kit/kit.json` dentro il VST3.
+**Non occorre creare cartelle in `~/Music` né installare i WAV separatamente.**
 
 | MORPH | Directory originale | Carattere |
 |---:|---|---|
-| 0 | `01 Natural ` (spazio finale nel nome originale) | Naturale 1 |
+| 0 | `01 Natural` | Naturale 1 |
 | 20 | `02 Natural` | Naturale 2 |
 | 40 | `03 processed` | Trattato 1 |
 | 60 | `04 processed` | Trattato 2 |
 | 80 | `05 processed` | Trattato 3 |
 | 100 | `06 Electro` | Elettronico |
 
-I **444 WAV** sono forniti separatamente, non nel repository GitHub.
-Gli extra `.asd`, `.DS_Store` e `__MACOSX` non sono utilizzati.
+L'archivio sorgente originale usa `01 Natural ` con uno spazio finale nel nome;
+per evitare errori sul Mac, l'importatore lo normalizza in `01 Natural`.
+Gli extra `.asd`, `.DS_Store`, `__MACOSX` e il vecchio `kit.json` non sono distribuiti.
 
-**Importante:** il `kit.json` contenuto nell'archivio originale è vecchio
-(versione 1). Sostituirlo con il file `kit/kit.json` di questo repository,
-senza modificare i WAV.
+### Installazione
 
-### Installazione dei campioni
+1. Da GitHub Actions scarica `SculptDrums-VST3-macOS` dell'ultima build.
+2. Estrai lo ZIP e copia `Sculpt Drums.vst3` in `/Library/Audio/Plug-Ins/VST3/`.
+3. Riavvia Reaper o Sculpt DAW e apri lo strumento su una traccia MIDI/Instrument.
+4. Aspetta il caricamento: il plugin deve indicare `Kit: ... eventi / 444 WAV`.
 
-1. Estrai lo ZIP originale in `~/Music/`, mantenendo la struttura `Sculpt Drums/`.
-2. Copia il nuovo `kit/kit.json` in `~/Music/Sculpt Drums/kit.json`, sovrascrivendo
-   **solo** il vecchio manifest, non i WAV.
-3. Chiudi e riapri la DAW: il kit viene caricato in background all'avvio del plugin.
-4. Il plugin deve indicare `Kit: ... eventi / 444 WAV` anziché `suoni di prova`.
+Il motore prova prima il kit incorporato nel VST3, poi la vecchia cartella
+`~/Music/Sculpt Drums/` per compatibilità di sviluppo. Se entrambi mancano,
+produce soltanto i suoni sintetici di prova.
 
-Prima di aprire la DAW si può controllare che tutti i file siano stati estratti:
-
-```sh
-python3 tools/audit_install.py "$HOME/Music/Sculpt Drums"
-```
-
-L'esito atteso è `WAV mancanti: 0`. È importante conservare lo spazio finale
-nel nome originale `01 Natural `, altrimenti i 21 WAV della prima cartella
-non verranno trovati.
-
-Per rigenerare il manifest dopo ulteriori aggiunte:
+### Aggiornare la libreria dai campioni originali
 
 ```sh
-python3 tools/build_ordered_kit.py '/percorso/Sculpt Drums.zip' -o kit/kit.json
-# Oppure da una cartella già estratta:
-python3 tools/build_ordered_kit.py "$HOME/Music/Sculpt Drums" -o kit/kit.json
+python3 tools/import_samples.py '/percorso/Sculpt Drums.zip'
+python3 tools/build_ordered_kit.py Samples -o kit/kit.json
+python3 tools/audit_install.py .
 ```
 
 Il generatore raggruppa le riprese `close + over/OH + room` dello stesso colpo
@@ -89,7 +80,8 @@ cmake --build build --config Release --target SculptDrums_VST3
 ```
 
 La GitHub Action `.github/workflows/build-macos-vst3.yml` produce lo ZIP VST3
-universale Apple Silicon + Intel nella pagina Actions del run.
+universale Apple Silicon + Intel nella pagina Actions del run. Verifica che
+tutti i 444 WAV siano presenti nel bundle prima di apporre la firma ad hoc.
 
 ## Verifiche ancora necessarie
 

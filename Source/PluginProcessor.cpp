@@ -2,6 +2,28 @@
 #include "PluginEditor.h"
 #include <algorithm>
 #include <utility>
+#if JUCE_MAC
+ #include <dlfcn.h>
+#endif
+
+juce::AudioProcessor* JUCE_CALLTYPE createPluginFilter();
+
+// Il VST3 contiene kit.json e tutti i WAV sotto Contents/Resources.
+// Non usare currentExecutableFile: in un plugin identifica l'host/DAW.
+static juce::File bundledKitRoot()
+{
+#if JUCE_MAC
+    Dl_info info {};
+    if (dladdr (reinterpret_cast<const void*> (&createPluginFilter), &info) != 0
+        && info.dli_fname != nullptr)
+    {
+        const auto binary = juce::File (juce::String::fromUTF8 (info.dli_fname));
+        return binary.getParentDirectory().getParentDirectory()
+                     .getChildFile ("Resources").getChildFile ("SculptDrumsKit");
+    }
+#endif
+    return {};
+}
 
 //==============================================================================
 class SculptDrumsProcessor::KitLoader : public juce::Thread
@@ -244,7 +266,9 @@ void SculptDrumsProcessor::levelMatchGroup (std::vector<Sample>& g, double sr)
 
 void SculptDrumsProcessor::loadKit (double sr, juce::Thread& thread)
 {
-    const auto root = juce::File::getSpecialLocation (juce::File::userMusicDirectory).getChildFile ("Sculpt Drums");
+    auto root = bundledKitRoot();
+    if (! root.getChildFile ("kit.json").existsAsFile())
+        root = juce::File::getSpecialLocation (juce::File::userMusicDirectory).getChildFile ("Sculpt Drums");
     const auto kitFile = root.getChildFile ("kit.json");
 
     if (! kitFile.existsAsFile())

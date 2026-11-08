@@ -23,7 +23,7 @@ introduce sei riferimenti distinti, preservati dal motore VST3:
 
 | MORPH | Archivio | Carattere |
 |---:|---|---|
-| 0 | `01 Natural ` | Acustico naturale 1 |
+| 0 | `01 Natural` | Acustico naturale 1 |
 | 20 | `02 Natural` | Acustico naturale 2 |
 | 40 | `03 processed` | Acustico trattato 1 |
 | 60 | `04 processed` | Acustico trattato 2 |
@@ -76,6 +76,11 @@ Quarta proposta grafica, modificata (vedi `gui-mockup.png`): superficie nera opa
 ## 8. Formato
 
 macOS, **VST3** (decisione: niente AU). In seguito integrabile in Sculpt DAW. Prevista l'instradamento separato delle componenti del kit verso le uscite della DAW, da definire.
+
+La libreria di 444 WAV è ora presente nel repository in `Samples/` e copiata
+nel bundle VST3 (`Contents/Resources/SculptDrumsKit/Samples/`) in fase di build.
+La cartella musicale esterna non è necessaria. Lo stadio `01 Natural ` dello ZIP
+originale è normalizzato in `01 Natural` per evitare ambiguità nei percorsi.
 
 ## 9. Da fare
 

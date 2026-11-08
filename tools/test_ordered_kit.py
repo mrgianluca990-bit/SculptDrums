@@ -21,13 +21,14 @@ class OrderedKitTests(unittest.TestCase):
         ]
         kit = make_kit(wav)
         self.assertEqual(kit["version"], 2)
+        self.assertEqual(kit["sampleFolder"], "Samples")
         self.assertEqual(kit["sampleFiles"], len(wav))
         self.assertEqual([s["position"] for s in kit["morphStages"]], [0, 20, 40, 60, 80, 100])
         pieces = {p["id"]: p for p in kit["pieces"]}
         kick = pieces["kick"]
         self.assertEqual(kick["note"], 36)
-        self.assertEqual(kick["stages"][0][0]["oh"], "01 Natural /Indra Kick low Over.wav")
-        self.assertEqual(kick["stages"][0][0]["room"], "01 Natural /Indra Kick low room.wav")
+        self.assertEqual(kick["stages"][0][0]["oh"], "01 Natural/Indra Kick low Over.wav")
+        self.assertEqual(kick["stages"][0][0]["room"], "01 Natural/Indra Kick low room.wav")
         self.assertEqual(len(kick["stages"][0]), 1)
         self.assertEqual(len(kick["stages"][2]), 1)
         self.assertEqual(len(kick["stages"][4]), 1)

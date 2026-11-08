@@ -41,3 +41,17 @@ target_link_libraries(SculptDrums
     juce::juce_recommended_config_flags
     juce::juce_recommended_lto_flags
     juce::juce_recommended_warning_flags)
+
+# Tutta la libreria risiede nel pacchetto VST3, senza cartelle da installare
+# nella directory Music dell'utente. I WAV sono copiati prima del packaging.
+if(APPLE)
+  set(SCULPT_KIT_RESOURCES "$<TARGET_BUNDLE_DIR:SculptDrums_VST3>/Contents/Resources/SculptDrumsKit")
+  add_custom_command(TARGET SculptDrums_VST3 POST_BUILD
+    COMMAND "${CMAKE_COMMAND}" -E make_directory "${SCULPT_KIT_RESOURCES}"
+    COMMAND "${CMAKE_COMMAND}" -E copy
+      "${CMAKE_SOURCE_DIR}/kit/kit.json" "${SCULPT_KIT_RESOURCES}/kit.json"
+    COMMAND "${CMAKE_COMMAND}" -E copy_directory
+      "${CMAKE_SOURCE_DIR}/Samples" "${SCULPT_KIT_RESOURCES}/Samples"
+    COMMENT "Incorporazione dei 444 WAV nel bundle Sculpt Drums VST3"
+    VERBATIM)
+endif()
