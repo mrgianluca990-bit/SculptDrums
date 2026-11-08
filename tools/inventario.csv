@@ -1,0 +1,438 @@
+path,family,piece,pack,variant,dynamic,articulation,channels,sr,bits,format,dur_s,peak_db
+Mindance/Crash1 1.wav,acoustic,crash,,1,,,2,44100,24,pcm,10.0,-38.2
+Mindance/Crash1 2.wav,acoustic,crash,,2,,,2,44100,24,pcm,10.0,-17.1
+Mindance/Crash2 1.wav,acoustic,crash,,1,,,2,44100,24,pcm,10.0,-32.4
+Mindance/Crash2 2.wav,acoustic,crash,,2,,,2,44100,24,pcm,10.0,-15.4
+very new/new_Crash1.wav,acoustic,crash,,1,,,2,44100,24,pcm,4.201,-13.7
+very new/new_Crash2.wav,acoustic,crash,,2,,,2,44100,24,pcm,4.201,-15.1
+Mindance/hh 1.wav,acoustic,hihat_closed,,1,,,2,44100,24,pcm,10.0,-30.0
+Mindance/hh 2.wav,acoustic,hihat_closed,,2,,,2,44100,24,pcm,10.0,-25.3
+Mindance/hh 3.wav,acoustic,hihat_closed,,3,,,2,44100,24,pcm,10.0,-24.4
+Mindance/hh 4.wav,acoustic,hihat_closed,,4,,,2,44100,24,pcm,10.0,-21.1
+Mindance/hh 5.wav,acoustic,hihat_closed,,5,,,2,44100,24,pcm,10.0,-16.3
+Mindance/hh 6.wav,acoustic,hihat_closed,,6,,,2,44100,24,pcm,10.0,-13.5
+Mindance/hh F long 1.wav,acoustic,hihat_closed,,1,,long,2,44100,24,pcm,10.0,-18.4
+Mindance/hh F long 2.wav,acoustic,hihat_closed,,2,,long,2,44100,24,pcm,10.0,-30.0
+Mindance/hh F.wav,acoustic,hihat_closed,,,,,2,44100,24,pcm,10.0,-25.0
+very new/new_HH CLOSE.wav,acoustic,hihat_closed,,,,,2,44100,24,pcm,1.472,-15.3
+very new/new_HH foot.wav,acoustic,hihat_foot,,,,foot,2,44100,24,pcm,1.472,-14.5
+Mindance/hh op 1.wav,acoustic,hihat_open,,1,,,2,44100,24,pcm,10.0,-17.2
+Mindance/hh op 2.wav,acoustic,hihat_open,,2,,,2,44100,24,pcm,10.0,-9.9
+Mindance/hh op 3.wav,acoustic,hihat_open,,3,,,2,44100,24,pcm,10.0,-11.6
+Mindance/hh op bell.wav,acoustic,hihat_open,,,,bell,2,44100,24,pcm,10.0,-17.4
+very new/new_HH open.wav,acoustic,hihat_open,,,,,2,44100,24,pcm,2.477,-12.8
+CAMPIONI/KICK.wav,acoustic,kick,,,,,2,44100,16,pcm,2.0,-4.5
+CAMPIONI/Kick Figo.wav,acoustic,kick,,,,,2,44100,16,pcm,5.753,-2.7
+Mindance/k 1.wav,acoustic,kick,,1,,,2,44100,24,pcm,10.0,-6.1
+Mindance/k 2.wav,acoustic,kick,,2,,,2,44100,24,pcm,10.0,-3.2
+Mindance/k 3.wav,acoustic,kick,,3,,,2,44100,24,pcm,10.0,-1.2
+Mindance/k 4.wav,acoustic,kick,,4,,,2,44100,24,pcm,10.0,-0.1
+NEW/Kick New.wav,acoustic,kick,,,,,2,44100,24,pcm,1.268,-2.5
+very new/new_Kick 1.wav,acoustic,kick,,1,,,2,44100,24,pcm,1.461,-1.1
+very new/new_Kick High.wav,acoustic,kick,,,,,2,44100,24,pcm,1.974,-0.5
+very new/new_Kick mp.wav,acoustic,kick,,,mp,,2,44100,24,pcm,1.974,-6.5
+very new/new_Kick p.wav,acoustic,kick,,,p,,2,44100,24,pcm,1.974,-8.4
+very new/new_Kick pp.wav,acoustic,kick,,,pp,,2,44100,24,pcm,1.974,-9.6
+Mindance/ride 1.wav,acoustic,ride,,1,,,2,44100,24,pcm,10.0,-32.4
+Mindance/ride 2.wav,acoustic,ride,,2,,,2,44100,24,pcm,10.0,-23.4
+Mindance/ride 3.wav,acoustic,ride,,3,,,2,44100,24,pcm,10.0,-5.5
+Mindance/ride 4.wav,acoustic,ride,,4,,,2,44100,24,pcm,10.0,-7.0
+Mindance/ride 5.wav,acoustic,ride,,5,,,2,44100,24,pcm,10.0,-17.5
+Mindance/ride bell 1.wav,acoustic,ride,,1,,bell,2,44100,24,pcm,10.0,-20.1
+Mindance/ride bell 2.wav,acoustic,ride,,2,,bell,2,44100,24,pcm,10.0,-17.9
+very new/new_Ride.wav,acoustic,ride,,,,,2,44100,24,pcm,4.201,-11.9
+very new/new_Ride_bell.wav,acoustic,ride,,,,bell,2,44100,24,pcm,4.201,-19.5
+CAMPIONI/Rullo figo.wav,acoustic,roll,,,,,2,44100,16,pcm,2.024,-7.0
+CAMPIONI/Rullo.wav,acoustic,roll,,,,,2,44100,16,pcm,1.669,-1.5
+CAMPIONI/rullo2.wav,acoustic,roll,,2,,,2,44100,16,pcm,1.473,-5.9
+CAMPIONI/SNARE.wav,acoustic,snare,,,,,2,44100,16,pcm,2.0,-1.9
+Mindance/S 1.wav,acoustic,snare,,1,,,2,44100,24,pcm,10.0,-10.8
+Mindance/S 2.wav,acoustic,snare,,2,,,2,44100,24,pcm,10.0,-4.7
+Mindance/S 3.wav,acoustic,snare,,3,,,2,44100,24,pcm,10.0,-3.7
+Mindance/S 4.wav,acoustic,snare,,4,,,2,44100,24,pcm,10.0,-0.0
+NEW/Snare trig NEW.wav,acoustic,snare,,,,,2,44100,24,pcm,1.268,-0.9
+very new/new_Snare 1.wav,acoustic,snare,,1,,,2,44100,24,pcm,1.772,-4.2
+very new/new_Snare 2 rim.wav,acoustic,snare,,,,rim,2,44100,24,pcm,1.858,-0.3
+very new/new_Snare 3.wav,acoustic,snare,,3,,,2,44100,24,pcm,1.858,-0.4
+very new/new_Snare 4.wav,acoustic,snare,,4,,,2,44100,24,pcm,1.669,-1.5
+very new/new_Snare 5.wav,acoustic,snare,,5,,,2,44100,24,pcm,1.669,-5.9
+very new/new_Snare 6 rim.wav,acoustic,snare,,,,rim,2,44100,24,pcm,1.669,-1.1
+very new/new_Snare 8.wav,acoustic,snare,,8,,,2,44100,24,pcm,1.268,-0.9
+very new/new_Snare 9 bordo.wav,acoustic,snare,,,,bordo,2,44100,24,pcm,1.268,-5.1
+very new/new_Splash1.wav,acoustic,splash,,1,,,2,44100,24,pcm,1.41,-17.2
+very new/new_Splash2.wav,acoustic,splash,,2,,,2,44100,24,pcm,1.41,-10.3
+CAMPIONI/TIMPANO1.wav,acoustic,timpano,,1,,,2,44100,16,pcm,2.5,-7.0
+CAMPIONI/TIMPANO2.wav,acoustic,timpano,,2,,,2,44100,16,pcm,2.5,-5.0
+Mindance/Tim 1.wav,acoustic,timpano,,1,,,2,44100,24,pcm,10.0,-9.1
+Mindance/Tim 2.wav,acoustic,timpano,,2,,,2,44100,24,pcm,10.0,-2.4
+CAMPIONI/TOM1.wav,acoustic,tom,,1,,,2,44100,16,pcm,2.5,-4.9
+CAMPIONI/TOM2.wav,acoustic,tom,,2,,,2,44100,16,pcm,2.5,-8.3
+Mindance/tom 1.wav,acoustic,tom,,1,,,2,44100,24,pcm,10.0,-14.3
+Mindance/tom 2.wav,acoustic,tom,,2,,,2,44100,24,pcm,10.0,-0.2
+Mindance/tom2 1.wav,acoustic,tom,,1,,,2,44100,24,pcm,10.0,-10.3
+Mindance/tom2 2.wav,acoustic,tom,,2,,,2,44100,24,pcm,10.0,-4.5
+very new/new_tom 1.wav,acoustic,tom,,1,,,2,44100,24,pcm,2.633,-4.1
+very new/new_tom 2.wav,acoustic,tom,,2,,,2,44100,24,pcm,2.633,-9.4
+very new/new_tom 3.wav,acoustic,tom,,3,,,2,44100,24,pcm,2.633,-2.9
+very new/new_tom 4.wav,acoustic,tom,,4,,,2,44100,24,pcm,2.633,-2.0
+very new/new_tom 5.wav,acoustic,tom,,5,,,2,44100,24,pcm,2.633,-6.1
+Clap/Clap1.wav,electronic,clap,clap,1,,,2,88200,24,pcm,1.704,-7.8
+Clap/Clap1_1.wav,electronic,clap,clap1_,1,,,2,88200,24,pcm,2.901,-8.9
+Clap/Clap1_2.wav,electronic,clap,clap1_,2,,,2,88200,24,pcm,1.67,-7.9
+Clap/Clap1_3.wav,electronic,clap,clap1_,3,,,2,88200,24,pcm,1.653,-7.3
+Clap/Clap1_4.wav,electronic,clap,clap1_,4,,,2,88200,24,pcm,1.648,-8.6
+Clap/Clap1_5.wav,electronic,clap,clap1_,5,,,2,88200,24,pcm,0.877,-8.4
+Clap/Clap1_6.wav,electronic,clap,clap1_,6,,,2,88200,24,pcm,1.941,-8.1
+Electro/Clap/Clap EchoPlex.wav,electronic,clap,echoplex,,,,2,44100,24,pcm,0.662,-0.0
+Electro/Clap/Clap Forsaken .wav,electronic,clap,forsaken,,,,2,44100,24,pcm,0.959,-1.7
+Electro/Clap/Clap Hemp.wav,electronic,clap,hemp,,,,2,44100,24,pcm,0.389,-1.7
+Electro/Clap/Clap SteamPipe.wav,electronic,clap,steampipe,,,,2,44100,24,pcm,0.192,-1.7
+Electro/Clap/Clap Want2Survive.wav,electronic,clap,want2survive,,,,2,44100,24,pcm,0.96,-1.7
+Electro/Combo/Combo GravelTrap.wav,electronic,combo,graveltrap,,,,2,44100,24,pcm,0.172,-1.7
+Electro/Combo/Combo Percman 1.wav,electronic,combo,percman,1,,,2,44100,24,pcm,0.68,-1.2
+Electro/Combo/Combo Percman 2.wav,electronic,combo,percman,2,,,2,44100,24,pcm,0.342,-1.7
+Electro/Combo/Combo Percman 3.wav,electronic,combo,percman,3,,,2,44100,24,pcm,0.5,-1.7
+Electro/Combo/Combo RattleSnakes 2.wav,electronic,combo,rattlesnakes,2,,,2,44100,24,pcm,0.249,-3.0
+Electro/Combo/Combo RattleSnakes.wav,electronic,combo,rattlesnakes,,,,2,44100,24,pcm,0.176,-1.7
+Electro/Combo/Combo SteamPipe.wav,electronic,combo,steampipe,,,,2,44100,24,pcm,2.706,-0.9
+Electro/Cymbal/Crash Betrayed DS.wav,electronic,crash,crash betrayed ds,,,,2,44100,24,pcm,0.982,-3.4
+Electro/Cymbal/Cymbal Caustic.wav,electronic,cymbal,caustic,,,,2,44100,24,pcm,5.143,-3.5
+Electro/Cymbal/Cymbal Collapse.wav,electronic,cymbal,collapse,,,,2,44100,24,pcm,5.579,0.0
+Electro/Cymbal/Cymbal Doomsday.wav,electronic,cymbal,doomsday,,,,2,44100,24,pcm,2.877,-1.7
+Electro/Cymbal/Cymbal Eclipse.wav,electronic,cymbal,eclipse,,,,2,44100,24,pcm,8.571,-0.8
+Electro/Cymbal/Cymbal Falling.wav,electronic,cymbal,falling,,,,2,44100,24,pcm,10.095,-1.4
+Electro/Cymbal/Cymbal Gravity.wav,electronic,cymbal,gravity,,,,2,44100,24,pcm,5.442,-0.2
+Electro/Cymbal/Cymbal Petroleum.wav,electronic,cymbal,petroleum,,,,2,44100,24,pcm,4.128,-1.7
+Electro/Cymbal/Cymbal ReachingOut.wav,electronic,cymbal,reachingout,,,,2,44100,24,pcm,13.714,-1.7
+Electro/Cymbal/Cymbal Warewolf.wav,electronic,cymbal,warewolf,,,,2,44100,24,pcm,6.547,-1.7
+Electro/Cymbal/RevCymbal SteamPipe.wav,electronic,cymbal,revcymbal steampipe,,,,2,44100,24,pcm,2.196,-1.7
+Electro/Cymbal/RevCymbal TokyoDrift.wav,electronic,cymbal,revcymbal tokyodrift,,,,2,44100,24,pcm,11.163,-3.3
+Electro/HiHat/ClosedHH Atomized 1.wav,electronic,hihat_closed,atomized,1,,,2,44100,24,pcm,0.338,-1.7
+Electro/HiHat/ClosedHH Atomized 2.wav,electronic,hihat_closed,atomized,2,,,2,44100,24,pcm,0.084,-1.7
+Electro/HiHat/ClosedHH Atomized 3.wav,electronic,hihat_closed,atomized,3,,,2,44100,24,pcm,0.25,-1.7
+Electro/HiHat/ClosedHH BasketCase.wav,electronic,hihat_closed,basketcase,,,,2,44100,24,pcm,0.174,-1.7
+Electro/HiHat/ClosedHH Betrayed DS.wav,electronic,hihat_closed,betrayed ds,,,,2,44100,24,pcm,0.094,-4.3
+Electro/HiHat/ClosedHH Caustic 1.wav,electronic,hihat_closed,caustic,1,,,2,44100,24,pcm,0.234,-1.7
+Electro/HiHat/ClosedHH Caustic 2.wav,electronic,hihat_closed,caustic,2,,,2,44100,24,pcm,0.212,-1.7
+Electro/HiHat/ClosedHH Collapse 1.wav,electronic,hihat_closed,collapse,1,,,2,44100,24,pcm,1.004,0.0
+Electro/HiHat/ClosedHH Collapse 2.wav,electronic,hihat_closed,collapse,2,,,2,44100,24,pcm,0.164,-0.0
+Electro/HiHat/ClosedHH Cracked 1.wav,electronic,hihat_closed,cracked,1,,,2,44100,24,pcm,0.212,-1.7
+Electro/HiHat/ClosedHH Cracked 2.wav,electronic,hihat_closed,cracked,2,,,2,44100,24,pcm,0.157,-1.7
+Electro/HiHat/ClosedHH Crypt 1.wav,electronic,hihat_closed,crypt,1,,,2,44100,24,pcm,0.137,-1.7
+Electro/HiHat/ClosedHH Crypt 2.wav,electronic,hihat_closed,crypt,2,,,2,44100,24,pcm,0.129,-1.7
+Electro/HiHat/ClosedHH Damnation.wav,electronic,hihat_closed,damnation,,,,2,44100,24,pcm,0.244,-1.7
+Electro/HiHat/ClosedHH DarkDub 1.wav,electronic,hihat_closed,darkdub,1,,,2,44100,24,pcm,0.099,-1.7
+Electro/HiHat/ClosedHH DarkDub 2.wav,electronic,hihat_closed,darkdub,2,,,2,44100,24,pcm,0.09,-1.7
+Electro/HiHat/ClosedHH Daywalker 1.wav,electronic,hihat_closed,daywalker,1,,,2,44100,24,pcm,0.029,0.0
+Electro/HiHat/ClosedHH Doomsday 1.wav,electronic,hihat_closed,doomsday,1,,,2,44100,24,pcm,0.091,-1.7
+Electro/HiHat/ClosedHH EchoPlex 1.wav,electronic,hihat_closed,echoplex,1,,,2,44100,24,pcm,0.088,-1.7
+Electro/HiHat/ClosedHH Eclipse 1.wav,electronic,hihat_closed,eclipse,1,,,2,44100,24,pcm,0.164,-8.1
+Electro/HiHat/ClosedHH Eclipse 2.wav,electronic,hihat_closed,eclipse,2,,,2,44100,24,pcm,0.257,-12.2
+Electro/HiHat/ClosedHH Falling.wav,electronic,hihat_closed,falling,,,,2,44100,24,pcm,0.213,-1.7
+Electro/HiHat/ClosedHH Forsaken .wav,electronic,hihat_closed,forsaken,,,,2,44100,24,pcm,0.081,-1.7
+Electro/HiHat/ClosedHH GravelTrap.wav,electronic,hihat_closed,graveltrap,,,,2,44100,24,pcm,0.078,-1.7
+Electro/HiHat/ClosedHH Gravity.wav,electronic,hihat_closed,gravity,,,,2,44100,24,pcm,1.359,0.0
+Electro/HiHat/ClosedHH Hemp.wav,electronic,hihat_closed,hemp,,,,2,44100,24,pcm,0.186,-1.7
+Electro/HiHat/ClosedHH Inception 1.wav,electronic,hihat_closed,inception,1,,,2,44100,24,pcm,0.128,-1.7
+Electro/HiHat/ClosedHH Inception 2.wav,electronic,hihat_closed,inception,2,,,2,44100,24,pcm,0.085,-1.7
+Electro/HiHat/ClosedHH LetItGo.wav,electronic,hihat_closed,letitgo,,,,2,44100,24,pcm,0.221,-2.2
+Electro/HiHat/ClosedHH NYC 2.wav,electronic,hihat_closed,nyc,2,,,2,44100,24,pcm,0.121,-3.2
+Electro/HiHat/ClosedHH NYC.wav,electronic,hihat_closed,nyc,,,,2,44100,24,pcm,0.084,-1.7
+Electro/HiHat/ClosedHH Pandemic.wav,electronic,hihat_closed,pandemic,,,,2,44100,24,pcm,0.137,-5.6
+Electro/HiHat/ClosedHH Passive.wav,electronic,hihat_closed,passive,,,,2,44100,24,pcm,0.156,-1.7
+Electro/HiHat/ClosedHH Petroleum.wav,electronic,hihat_closed,petroleum,,,,2,44100,24,pcm,0.111,-1.7
+Electro/HiHat/ClosedHH PigFace 1.wav,electronic,hihat_closed,pigface,1,,,2,44100,24,pcm,0.172,-1.7
+Electro/HiHat/ClosedHH PigFace 2.wav,electronic,hihat_closed,pigface,2,,,2,44100,24,pcm,0.086,-1.7
+Electro/HiHat/ClosedHH PigFace 3.wav,electronic,hihat_closed,pigface,3,,,2,44100,24,pcm,0.053,-1.7
+Electro/HiHat/ClosedHH Pressure 1.wav,electronic,hihat_closed,pressure,1,,,2,44100,24,pcm,0.04,-1.7
+Electro/HiHat/ClosedHH Pressure 2.wav,electronic,hihat_closed,pressure,2,,,2,44100,24,pcm,0.098,-1.7
+Electro/HiHat/ClosedHH Pressure 3.wav,electronic,hihat_closed,pressure,3,,,2,44100,24,pcm,0.136,-1.7
+Electro/HiHat/ClosedHH QuantumReap.wav,electronic,hihat_closed,quantumreap,,,,2,44100,24,pcm,0.07,-1.7
+Electro/HiHat/ClosedHH RattleSnakes.wav,electronic,hihat_closed,rattlesnakes,,,,2,44100,24,pcm,0.07,-1.7
+Electro/HiHat/ClosedHH ReachingOut 1.wav,electronic,hihat_closed,reachingout,1,,,2,44100,24,pcm,0.107,-1.7
+Electro/HiHat/ClosedHH ReachingOut 2.wav,electronic,hihat_closed,reachingout,2,,,2,44100,24,pcm,0.064,-1.7
+Electro/HiHat/ClosedHH SanityKillz.wav,electronic,hihat_closed,sanitykillz,,,,2,44100,24,pcm,0.041,-2.0
+Electro/HiHat/ClosedHH ShockOut 1.wav,electronic,hihat_closed,shockout,1,,,2,44100,24,pcm,0.044,-1.7
+Electro/HiHat/ClosedHH ShockOut 2.wav,electronic,hihat_closed,shockout,2,,,2,44100,24,pcm,0.186,-2.0
+Electro/HiHat/ClosedHH SoTek 1.wav,electronic,hihat_closed,sotek,1,,,2,44100,24,pcm,0.165,-1.7
+Electro/HiHat/ClosedHH SoTek 2.wav,electronic,hihat_closed,sotek,2,,,2,44100,24,pcm,0.177,-1.7
+Electro/HiHat/ClosedHH SteamPipe 1.wav,electronic,hihat_closed,steampipe,1,,,2,44100,24,pcm,0.183,-1.7
+Electro/HiHat/ClosedHH SteamPipe 2.wav,electronic,hihat_closed,steampipe,2,,,2,44100,24,pcm,0.332,-1.7
+Electro/HiHat/ClosedHH TokyoDrift.wav,electronic,hihat_closed,tokyodrift,,,,2,44100,24,pcm,0.139,-1.7
+Electro/HiHat/ClosedHH Want2Survive DS.wav,electronic,hihat_closed,want2survive ds,,,,2,44100,24,pcm,0.127,-3.7
+Electro/HiHat/ClosedHH Warewolf.wav,electronic,hihat_closed,warewolf,,,,2,44100,24,pcm,0.052,-1.7
+Electro/HiHat/OpenHH Atomized.wav,electronic,hihat_open,atomized,,,,2,44100,24,pcm,0.74,-1.7
+Electro/HiHat/OpenHH BasketCase.wav,electronic,hihat_open,basketcase,,,,2,44100,24,pcm,0.446,-1.7
+Electro/HiHat/OpenHH Betrayed DS.wav,electronic,hihat_open,betrayed ds,,,,2,44100,24,pcm,0.192,-3.2
+Electro/HiHat/OpenHH Caustic.wav,electronic,hihat_open,caustic,,,,2,44100,24,pcm,4.262,-1.7
+Electro/HiHat/OpenHH Collapse.wav,electronic,hihat_open,collapse,,,,2,44100,24,pcm,0.748,0.0
+Electro/HiHat/OpenHH Damnation.wav,electronic,hihat_open,damnation,,,,2,44100,24,pcm,0.529,-3.8
+Electro/HiHat/OpenHH DarkDub.wav,electronic,hihat_open,darkdub,,,,2,44100,24,pcm,0.353,-1.7
+Electro/HiHat/OpenHH Daywalker.wav,electronic,hihat_open,daywalker,,,,2,44100,24,pcm,0.088,-1.7
+Electro/HiHat/OpenHH Doomsday.wav,electronic,hihat_open,doomsday,,,,2,44100,24,pcm,0.214,-1.7
+Electro/HiHat/OpenHH EchoPlex 1.wav,electronic,hihat_open,echoplex,1,,,2,44100,24,pcm,0.21,-1.7
+Electro/HiHat/OpenHH EchoPlex 2.wav,electronic,hihat_open,echoplex,2,,,2,44100,24,pcm,0.176,-1.7
+Electro/HiHat/OpenHH Eclipse.wav,electronic,hihat_open,eclipse,,,,2,44100,24,pcm,1.558,0.0
+Electro/HiHat/OpenHH Falling.wav,electronic,hihat_open,falling,,,,2,44100,24,pcm,0.42,-1.7
+Electro/HiHat/OpenHH Forsaken 1.wav,electronic,hihat_open,forsaken,1,,,2,44100,24,pcm,1.07,-1.7
+Electro/HiHat/OpenHH Forsaken 2.wav,electronic,hihat_open,forsaken,2,,,2,44100,24,pcm,0.321,-1.7
+Electro/HiHat/OpenHH GravelTrap.wav,electronic,hihat_open,graveltrap,,,,2,44100,24,pcm,0.248,-1.9
+Electro/HiHat/OpenHH Gravity.wav,electronic,hihat_open,gravity,,,,2,44100,24,pcm,1.278,0.0
+Electro/HiHat/OpenHH Hemp 1.wav,electronic,hihat_open,hemp,1,,,2,44100,24,pcm,0.199,-1.7
+Electro/HiHat/OpenHH Hemp 2.wav,electronic,hihat_open,hemp,2,,,2,44100,24,pcm,0.171,-1.7
+Electro/HiHat/OpenHH LetItGo.wav,electronic,hihat_open,letitgo,,,,2,44100,24,pcm,0.305,-1.7
+Electro/HiHat/OpenHH NYC.wav,electronic,hihat_open,nyc,,,,2,44100,24,pcm,0.206,-1.7
+Electro/HiHat/OpenHH Pandemic 1.wav,electronic,hihat_open,pandemic,1,,,2,44100,24,pcm,0.291,-6.4
+Electro/HiHat/OpenHH Pandemic 2.wav,electronic,hihat_open,pandemic,2,,,2,44100,24,pcm,0.187,-1.7
+Electro/HiHat/OpenHH Passive.wav,electronic,hihat_open,passive,,,,2,44100,24,pcm,0.375,-1.7
+Electro/HiHat/OpenHH Petroleum.wav,electronic,hihat_open,petroleum,,,,2,44100,24,pcm,0.291,-1.7
+Electro/HiHat/OpenHH QuantumReap 1.wav,electronic,hihat_open,quantumreap,1,,,2,44100,24,pcm,0.291,-0.0
+Electro/HiHat/OpenHH QuantumReap 2.wav,electronic,hihat_open,quantumreap,2,,,2,44100,24,pcm,0.171,-1.7
+Electro/HiHat/OpenHH RattleSnakes.wav,electronic,hihat_open,rattlesnakes,,,,2,44100,24,pcm,0.441,-1.7
+Electro/HiHat/OpenHH ReachingOut.wav,electronic,hihat_open,reachingout,,,,2,44100,24,pcm,0.285,-1.7
+Electro/HiHat/OpenHH SanityKillz .wav,electronic,hihat_open,sanitykillz,,,,2,44100,24,pcm,0.168,-1.7
+Electro/HiHat/OpenHH ShockOut.wav,electronic,hihat_open,shockout,,,,2,44100,24,pcm,0.26,-1.7
+Electro/HiHat/OpenHH SoTek.wav,electronic,hihat_open,sotek,,,,2,44100,24,pcm,0.258,-1.7
+Electro/HiHat/OpenHH SteamPipe.wav,electronic,hihat_open,steampipe,,,,2,44100,24,pcm,1.939,-1.7
+Electro/HiHat/OpenHH TokyoDrift 1.wav,electronic,hihat_open,tokyodrift,1,,,2,44100,24,pcm,0.557,-1.7
+Electro/HiHat/OpenHH TokyoDrift 2.wav,electronic,hihat_open,tokyodrift,2,,,2,44100,24,pcm,0.772,-1.7
+Electro/HiHat/OpenHH Want2Survive DS.wav,electronic,hihat_open,want2survive ds,,,,2,44100,24,pcm,0.174,-3.6
+Electro/HiHat/OpenHH Warewolf.wav,electronic,hihat_open,warewolf,,,,2,44100,24,pcm,0.198,-1.7
+Electro/Kick/Kick Atomized 1.wav,electronic,kick,atomized,1,,,2,44100,16,pcm,0.167,0.0
+Electro/Kick/Kick Atomized 2.wav,electronic,kick,atomized,2,,,2,44100,16,pcm,0.23,-0.0
+Electro/Kick/Kick BasketCase 1.wav,electronic,kick,basketcase,1,,,2,44100,24,pcm,0.171,-1.7
+Electro/Kick/Kick BasketCase 2.wav,electronic,kick,basketcase,2,,,2,44100,24,pcm,0.353,-1.7
+Electro/Kick/Kick Betrayed DS 1.wav,electronic,kick,betrayed ds,1,,,2,44100,24,pcm,0.317,-3.0
+Electro/Kick/Kick Betrayed DS 2.wav,electronic,kick,betrayed ds,2,,,2,44100,24,pcm,0.302,-3.0
+Electro/Kick/Kick Caustic 1.wav,electronic,kick,caustic,1,,,2,44100,24,pcm,0.313,-0.0
+Electro/Kick/Kick Caustic 2.wav,electronic,kick,caustic,2,,,2,44100,24,pcm,0.174,-0.2
+Electro/Kick/Kick Collapse 1.wav,electronic,kick,collapse,1,,,2,44100,24,pcm,0.706,-0.0
+Electro/Kick/Kick Collapse 2.wav,electronic,kick,collapse,2,,,2,44100,24,pcm,0.353,-0.3
+Electro/Kick/Kick Cracked 1.wav,electronic,kick,cracked,1,,,2,44100,24,pcm,1.312,-1.9
+Electro/Kick/Kick Cracked 2.wav,electronic,kick,cracked,2,,,2,44100,24,pcm,0.353,-1.7
+Electro/Kick/Kick Crypt 1.wav,electronic,kick,crypt,1,,,2,44100,24,pcm,0.353,-1.7
+Electro/Kick/Kick Crypt 2.wav,electronic,kick,crypt,2,,,2,44100,24,pcm,0.353,-1.7
+Electro/Kick/Kick Damnation 1.wav,electronic,kick,damnation,1,,,2,44100,16,pcm,0.272,0.0
+Electro/Kick/Kick Damnation 2.wav,electronic,kick,damnation,2,,,2,44100,24,pcm,0.34,-1.7
+Electro/Kick/Kick DarkDub 1.wav,electronic,kick,darkdub,1,,,2,44100,24,pcm,0.174,-1.7
+Electro/Kick/Kick DarkDub 2.wav,electronic,kick,darkdub,2,,,2,44100,24,pcm,0.172,-1.7
+Electro/Kick/Kick DayWalker 1.wav,electronic,kick,daywalker,1,,,2,44100,24,pcm,0.231,0.0
+Electro/Kick/Kick Daywalker 2.wav,electronic,kick,daywalker,2,,,2,44100,24,pcm,0.193,-1.7
+Electro/Kick/Kick Doomsday 1.wav,electronic,kick,doomsday,1,,,2,44100,24,pcm,0.411,0.0
+Electro/Kick/Kick Doomsday 2.wav,electronic,kick,doomsday,2,,,2,44100,24,pcm,0.456,-1.7
+Electro/Kick/Kick EchoPlex 1.wav,electronic,kick,echoplex,1,,,2,44100,24,pcm,0.551,0.0
+Electro/Kick/Kick EchoPlex 2.wav,electronic,kick,echoplex,2,,,2,44100,24,pcm,0.566,-1.7
+Electro/Kick/Kick Eclipse 1.wav,electronic,kick,eclipse,1,,,2,44100,24,pcm,0.353,-0.3
+Electro/Kick/Kick Eclipse 2.wav,electronic,kick,eclipse,2,,,2,44100,24,pcm,0.353,-1.7
+Electro/Kick/Kick Falling 1.wav,electronic,kick,falling,1,,,2,44100,24,pcm,0.352,-1.7
+Electro/Kick/Kick Falling 2.wav,electronic,kick,falling,2,,,2,44100,24,pcm,0.174,-1.7
+Electro/Kick/Kick Forsaken 1.wav,electronic,kick,forsaken,1,,,2,44100,16,pcm,0.165,0.0
+Electro/Kick/Kick Forsaken 2.wav,electronic,kick,forsaken,2,,,2,44100,24,pcm,0.282,-1.7
+Electro/Kick/Kick GravelTrap 1.wav,electronic,kick,graveltrap,1,,,2,44100,24,pcm,0.459,-1.7
+Electro/Kick/Kick GravelTrap 2.wav,electronic,kick,graveltrap,2,,,2,44100,24,pcm,0.706,-1.7
+Electro/Kick/Kick Gravity 1.wav,electronic,kick,gravity,1,,,2,44100,24,pcm,0.706,-0.0
+Electro/Kick/Kick Gravity 2.wav,electronic,kick,gravity,2,,,2,44100,16,pcm,0.211,-0.0
+Electro/Kick/Kick Hemp 1.wav,electronic,kick,hemp,1,,,2,44100,24,pcm,0.241,-1.7
+Electro/Kick/Kick Hemp 2.wav,electronic,kick,hemp,2,,,2,44100,24,pcm,0.302,0.0
+Electro/Kick/Kick Inception Kit DS 1.wav,electronic,kick,inception kit ds,1,,,2,44100,24,pcm,0.267,-3.0
+Electro/Kick/Kick Inception Kit DS 2.wav,electronic,kick,inception kit ds,2,,,2,44100,24,pcm,0.611,-3.0
+Electro/Kick/Kick LetItGo 1.wav,electronic,kick,letitgo,1,,,2,44100,24,pcm,0.538,-0.0
+Electro/Kick/Kick LetItGo 2.wav,electronic,kick,letitgo,2,,,2,44100,24,pcm,0.208,-1.7
+Electro/Kick/Kick NYC 1.wav,electronic,kick,nyc,1,,,2,44100,24,pcm,0.172,-1.7
+Electro/Kick/Kick NYC 2.wav,electronic,kick,nyc,2,,,2,44100,24,pcm,0.238,-1.7
+Electro/Kick/Kick Pandemic 1.wav,electronic,kick,pandemic,1,,,2,44100,24,pcm,0.352,-1.7
+Electro/Kick/Kick Pandemic 2.wav,electronic,kick,pandemic,2,,,2,44100,24,pcm,0.265,-1.7
+Electro/Kick/Kick Passive 1.wav,electronic,kick,passive,1,,,2,44100,24,pcm,0.403,0.0
+Electro/Kick/Kick Passive 2.wav,electronic,kick,passive,2,,,2,44100,16,pcm,0.241,-0.0
+Electro/Kick/Kick Petroleum 1.wav,electronic,kick,petroleum,1,,,2,44100,24,pcm,0.173,-1.7
+Electro/Kick/Kick Petroleum 2.wav,electronic,kick,petroleum,2,,,2,44100,24,pcm,0.171,-1.7
+Electro/Kick/Kick PigFace 1.wav,electronic,kick,pigface,1,,,2,44100,24,pcm,0.202,-2.4
+Electro/Kick/Kick PigFace 2.wav,electronic,kick,pigface,2,,,2,44100,24,pcm,0.213,-1.7
+Electro/Kick/Kick Pressure 1.wav,electronic,kick,pressure,1,,,2,44100,16,pcm,0.281,0.0
+Electro/Kick/Kick Pressure 2.wav,electronic,kick,pressure,2,,,2,44100,16,pcm,0.227,0.0
+Electro/Kick/Kick QuantumReap 1.wav,electronic,kick,quantumreap,1,,,2,44100,24,pcm,0.437,-1.7
+Electro/Kick/Kick QuantumReap 2.wav,electronic,kick,quantumreap,2,,,2,44100,24,pcm,0.353,-1.7
+Electro/Kick/Kick RattleSnakes 1.wav,electronic,kick,rattlesnakes,1,,,2,44100,24,pcm,4.941,-1.7
+Electro/Kick/Kick RattleSnakes 2.wav,electronic,kick,rattlesnakes,2,,,2,44100,24,pcm,3.402,-1.7
+Electro/Kick/Kick ReachingOut DS.wav,electronic,kick,reachingout ds,,,,2,44100,24,pcm,6.639,-3.0
+Electro/Kick/Kick ReachingOut.wav,electronic,kick,reachingout,,,,2,44100,24,pcm,0.296,-1.7
+Electro/Kick/Kick SanityKillz 1.wav,electronic,kick,sanitykillz,1,,,2,44100,24,pcm,0.173,-1.8
+Electro/Kick/Kick SanityKillz 2.wav,electronic,kick,sanitykillz,2,,,2,44100,24,pcm,0.086,-1.7
+Electro/Kick/Kick ShockOut 1.wav,electronic,kick,shockout,1,,,2,44100,24,pcm,0.223,-0.0
+Electro/Kick/Kick ShockOut 2.wav,electronic,kick,shockout,2,,,2,44100,24,pcm,0.313,-1.7
+Electro/Kick/Kick SoTek 1.wav,electronic,kick,sotek,1,,,2,44100,32,float,0.806,-2.5
+Electro/Kick/Kick SoTek 2.wav,electronic,kick,sotek,2,,,2,44100,24,pcm,0.615,0.0
+Electro/Kick/Kick SteamPipe 1.wav,electronic,kick,steampipe,1,,,2,44100,24,pcm,0.525,-0.0
+Electro/Kick/Kick SteamPipe 2.wav,electronic,kick,steampipe,2,,,2,44100,24,pcm,0.194,0.0
+Electro/Kick/Kick TokyoDrift 1.wav,electronic,kick,tokyodrift,1,,,2,44100,24,pcm,0.268,0.0
+Electro/Kick/Kick TokyoDrift 2.wav,electronic,kick,tokyodrift,2,,,2,44100,24,pcm,0.445,-1.7
+Electro/Kick/Kick Want2Survive DS 1.wav,electronic,kick,want2survive ds,1,,,2,44100,24,pcm,1.167,-3.0
+Electro/Kick/Kick Want2Survive DS 2.wav,electronic,kick,want2survive ds,2,,,2,44100,24,pcm,1.953,-3.0
+Electro/Kick/Kick Warewolf 1.wav,electronic,kick,warewolf,1,,,2,44100,24,pcm,0.18,-1.7
+Electro/Kick/Kick Warewolf 2.wav,electronic,kick,warewolf,2,,,2,44100,24,pcm,0.155,-1.7
+Electro/Percussion/Bell Pressure.wav,electronic,percussion,bell pressure,,,bell,2,96000,24,pcm,1.635,-1.7
+Electro/Percussion/Bongo BasketCase.wav,electronic,percussion,bongo basketcase,,,,2,44100,24,pcm,0.114,-1.7
+Electro/Percussion/Bongo Caustic.wav,electronic,percussion,bongo caustic,,,,2,44100,24,pcm,0.349,0.0
+Electro/Percussion/Bongo Percman 1.wav,electronic,percussion,bongo percman,1,,,2,44100,24,pcm,0.097,-1.7
+Electro/Percussion/Bongo Percman 2.wav,electronic,percussion,bongo percman,2,,,2,44100,24,pcm,0.478,-1.7
+Electro/Percussion/Bongo Percman 3.wav,electronic,percussion,bongo percman,3,,,2,44100,24,pcm,0.478,-1.7
+Electro/Percussion/Bongo Percman 4.wav,electronic,percussion,bongo percman,4,,,2,44100,16,pcm,0.319,-3.0
+Electro/Percussion/Bongo ReachingOut.wav,electronic,percussion,bongo reachingout,,,,2,44100,24,pcm,0.086,-1.7
+Electro/Percussion/Conga Damnation.wav,electronic,percussion,conga damnation,,,,2,44100,24,pcm,0.269,-1.7
+Electro/Percussion/Conga Percman 1.wav,electronic,percussion,conga percman,1,,,2,44100,24,pcm,0.252,-1.7
+Electro/Percussion/Conga Percman 2.wav,electronic,percussion,conga percman,2,,,2,44100,24,pcm,0.215,-1.7
+Electro/Percussion/Perc Betrayed DS.wav,electronic,percussion,betrayed ds,,,,2,44100,24,pcm,1.179,-3.0
+Electro/Percussion/Perc Collapse 1.wav,electronic,percussion,collapse,1,,,2,44100,24,pcm,0.831,-0.0
+Electro/Percussion/Perc Collapse 2.wav,electronic,percussion,collapse,2,,,2,44100,24,pcm,2.543,0.0
+Electro/Percussion/Perc Crypt.wav,electronic,percussion,crypt,,,,2,44100,24,pcm,3.423,-2.7
+Electro/Percussion/Perc Eclipse 1.wav,electronic,percussion,eclipse,1,,,2,44100,24,pcm,0.68,-1.5
+Electro/Percussion/Perc Eclipse 2.wav,electronic,percussion,eclipse,2,,,2,44100,24,pcm,0.68,-2.1
+Electro/Percussion/Perc Eclipse 3.wav,electronic,percussion,eclipse,3,,,2,44100,24,pcm,0.68,-1.4
+Electro/Percussion/Perc Falling.wav,electronic,percussion,falling,,,,2,44100,24,pcm,0.11,-1.7
+Electro/Percussion/Perc GravelTrap 1.wav,electronic,percussion,graveltrap,1,,,2,44100,24,pcm,1.411,-1.7
+Electro/Percussion/Perc GravelTrap 2.wav,electronic,percussion,graveltrap,2,,,2,44100,24,pcm,0.1,-1.7
+Electro/Percussion/Perc GravelTrap 3.wav,electronic,percussion,graveltrap,3,,,2,44100,24,pcm,0.941,-4.0
+Electro/Percussion/Perc Gravity .wav,electronic,percussion,gravity,,,,2,44100,24,pcm,0.68,-5.4
+Electro/Percussion/Perc Passive 1.wav,electronic,percussion,passive,1,,,2,96000,24,pcm,1.861,-1.7
+Electro/Percussion/Perc Passive 2.wav,electronic,percussion,passive,2,,,2,96000,24,pcm,2.365,-2.0
+Electro/Percussion/Perc Percman 1.wav,electronic,percussion,percman,1,,,2,44100,24,pcm,0.5,-1.7
+Electro/Percussion/Perc Percman 2.wav,electronic,percussion,percman,2,,,2,44100,24,pcm,0.647,-1.7
+Electro/Percussion/Perc Percman 3.wav,electronic,percussion,percman,3,,,2,44100,16,pcm,0.735,-2.0
+Electro/Percussion/Perc Pressure.wav,electronic,percussion,pressure,,,,2,44100,24,pcm,0.186,-1.7
+Electro/Percussion/Tambourine DarkDub.wav,electronic,percussion,tambourine darkdub,,,,2,44100,24,pcm,0.11,-3.4
+Electro/Percussion/Tambourine Inception.wav,electronic,percussion,tambourine inception,,,,2,44100,24,pcm,0.115,-1.7
+Electro/Percussion/Tambourine Petroleum.wav,electronic,percussion,tambourine petroleum,,,,2,44100,24,pcm,0.172,-2.1
+Electro/Percussion/Tambourine Want2Survive.wav,electronic,percussion,tambourine want2survive,,,,2,44100,24,pcm,0.144,-1.7
+Electro/Percussion/TimbaleRoll Percman.wav,electronic,percussion,timbaleroll percman,,,,2,44100,24,pcm,2.0,-1.7
+Electro/Cymbal/Ride BasketCase 1.wav,electronic,ride,ride basketcase,1,,,2,44100,24,pcm,1.371,-1.7
+Electro/Cymbal/Ride BasketCase 2.wav,electronic,ride,ride basketcase,2,,,2,44100,24,pcm,0.639,-0.9
+Electro/Cymbal/Ride Crypt.wav,electronic,ride,ride crypt,,,,2,44100,24,pcm,0.639,-1.3
+Electro/Cymbal/Ride Damnation.wav,electronic,ride,ride damnation,,,,2,44100,24,pcm,0.337,-0.0
+Electro/Cymbal/Ride Daywalker.wav,electronic,ride,ride daywalker,,,,2,44100,24,pcm,3.429,-1.7
+Electro/Cymbal/Ride Doomsday.wav,electronic,ride,ride doomsday,,,,2,44100,24,pcm,3.908,-1.7
+Electro/Cymbal/Ride EchoPlex.wav,electronic,ride,ride echoplex,,,,2,44100,24,pcm,0.172,-1.7
+Electro/Cymbal/Ride Falling.wav,electronic,ride,ride falling,,,,2,44100,24,pcm,6.031,-5.2
+Electro/Cymbal/Ride Forsaken.wav,electronic,ride,ride forsaken,,,,2,44100,24,pcm,3.096,-1.7
+Electro/Cymbal/Ride GravelTrap.wav,electronic,ride,ride graveltrap,,,,2,44100,24,pcm,4.603,-1.7
+Electro/Cymbal/Ride Hemp.wav,electronic,ride,ride hemp,,,,2,44100,24,pcm,2.589,-1.7
+Electro/Cymbal/Ride Inception.wav,electronic,ride,ride inception,,,,2,44100,24,pcm,4.0,-1.7
+Electro/Cymbal/Ride Petroleum.wav,electronic,ride,ride petroleum,,,,2,44100,24,pcm,2.589,0.0
+Electro/Cymbal/Ride Pressure.wav,electronic,ride,ride pressure,,,,2,44100,24,pcm,1.954,-1.7
+Electro/Cymbal/Ride RattleSnakes.wav,electronic,ride,ride rattlesnakes,,,,2,44100,24,pcm,2.107,-1.7
+Electro/Cymbal/Ride ReachingOut.wav,electronic,ride,ride reachingout,,,,2,44100,24,pcm,7.672,-1.7
+Electro/Cymbal/Ride SanityKillz.wav,electronic,ride,ride sanitykillz,,,,2,44100,24,pcm,1.714,-0.3
+Electro/Cymbal/Ride SoTek.wav,electronic,ride,ride sotek,,,,2,44100,24,pcm,1.169,-1.7
+Electro/Shaker/Shaker BasketCase.wav,electronic,shaker,basketcase,,,,2,44100,24,pcm,0.165,-1.7
+Electro/Shaker/Shaker Betrayed DS.wav,electronic,shaker,betrayed ds,,,,2,44100,24,pcm,0.11,-3.2
+Electro/Shaker/Shaker Caustic.wav,electronic,shaker,caustic,,,,2,44100,24,pcm,0.169,-1.7
+Electro/Shaker/Shaker Cracked.wav,electronic,shaker,cracked,,,,2,44100,24,pcm,0.428,-1.7
+Electro/Shaker/Shaker Crypt.wav,electronic,shaker,crypt,,,,2,44100,24,pcm,0.161,-1.7
+Electro/Shaker/Shaker Damnation.wav,electronic,shaker,damnation,,,,2,44100,24,pcm,0.091,-1.7
+Electro/Shaker/Shaker Daywalker.wav,electronic,shaker,daywalker,,,,2,44100,24,pcm,0.05,0.0
+Electro/Shaker/Shaker Doomsday Kit DS.wav,electronic,shaker,doomsday kit ds,,,,2,44100,24,pcm,0.035,-3.0
+Electro/Shaker/Shaker NYC.wav,electronic,shaker,nyc,,,,2,44100,24,pcm,0.171,-1.7
+Electro/Shaker/Shaker Pandemic.wav,electronic,shaker,pandemic,,,,2,44100,24,pcm,0.951,-0.0
+Electro/Shaker/Shaker Percman.wav,electronic,shaker,percman,,,,2,44100,16,pcm,0.185,-2.0
+Electro/Shaker/Shaker Petroleum.wav,electronic,shaker,petroleum,,,,2,44100,24,pcm,0.226,-1.7
+Electro/Shaker/Shaker PigFace.wav,electronic,shaker,pigface,,,,2,44100,24,pcm,0.059,-1.7
+Electro/Shaker/Shaker QuantumReap.wav,electronic,shaker,quantumreap,,,,2,44100,24,pcm,0.144,-0.0
+Electro/Shaker/Shaker RattleSnakes.wav,electronic,shaker,rattlesnakes,,,,2,44100,24,pcm,2.902,-2.2
+Electro/Shaker/Shaker SanityKillz.wav,electronic,shaker,sanitykillz,,,,2,44100,24,pcm,0.091,-0.0
+Electro/Shaker/Shaker Want2Survive.wav,electronic,shaker,want2survive,,,,2,44100,24,pcm,0.076,-1.7
+Electro/Shaker/Shaker Warewolf.wav,electronic,shaker,warewolf,,,,2,44100,24,pcm,0.18,-1.7
+Electro/Snare/Rim GravelTrap 1.wav,electronic,snare,graveltrap,1,,rim,2,44100,24,pcm,0.501,-1.7
+Electro/Snare/Rim GravelTrap 2.wav,electronic,snare,graveltrap,2,,rim,2,44100,24,pcm,0.344,-1.7
+Electro/Snare/Rim Want2Survive 1.wav,electronic,snare,want2survive,1,,rim,2,44100,32,float,0.2,0.0
+Electro/Snare/Rim Want2Survive 2.wav,electronic,snare,want2survive,2,,rim,2,44100,32,float,0.15,0.0
+Electro/Snare/Snare Atomized 1.wav,electronic,snare,atomized,1,,,2,44100,24,pcm,0.653,-1.7
+Electro/Snare/Snare Atomized 2.wav,electronic,snare,atomized,2,,,2,44100,24,pcm,0.287,-1.7
+Electro/Snare/Snare BasketCase 1.wav,electronic,snare,basketcase,1,,,2,44100,24,pcm,0.131,-0.0
+Electro/Snare/Snare BasketCase 2.wav,electronic,snare,basketcase,2,,,2,44100,24,pcm,0.194,-1.7
+Electro/Snare/Snare BasketCase 3.wav,electronic,snare,basketcase,3,,,2,44100,24,pcm,0.101,-1.7
+Electro/Snare/Snare Betrayed DS 1.wav,electronic,snare,betrayed ds,1,,,2,44100,24,pcm,0.21,-3.0
+Electro/Snare/Snare Betrayed DS 2.wav,electronic,snare,betrayed ds,2,,,2,44100,24,pcm,0.191,-3.6
+Electro/Snare/Snare Betrayed DS 3.wav,electronic,snare,betrayed ds,3,,,2,44100,24,pcm,0.198,-3.0
+Electro/Snare/Snare Caustic 1.wav,electronic,snare,caustic,1,,,2,44100,24,pcm,0.364,0.0
+Electro/Snare/Snare Caustic 2.wav,electronic,snare,caustic,2,,,2,44100,24,pcm,1.425,-1.0
+Electro/Snare/Snare Caustic 3.wav,electronic,snare,caustic,3,,,2,44100,24,pcm,0.123,-3.6
+Electro/Snare/Snare Collapse 1.wav,electronic,snare,collapse,1,,,2,44100,24,pcm,0.529,-0.0
+Electro/Snare/Snare Collapse 2.wav,electronic,snare,collapse,2,,,2,44100,24,pcm,0.353,0.0
+Electro/Snare/Snare Collapse 3.wav,electronic,snare,collapse,3,,,2,44100,24,pcm,0.432,-1.7
+Electro/Snare/Snare Cracked 1.wav,electronic,snare,cracked,1,,,2,44100,24,pcm,0.701,0.0
+Electro/Snare/Snare Cracked 2.wav,electronic,snare,cracked,2,,,2,44100,24,pcm,1.126,-1.7
+Electro/Snare/Snare Crypt 1.wav,electronic,snare,crypt,1,,,2,44100,24,pcm,0.214,-1.7
+Electro/Snare/Snare Crypt 2.wav,electronic,snare,crypt,2,,,2,44100,24,pcm,0.958,-1.7
+Electro/Snare/Snare Crypt 3.wav,electronic,snare,crypt,3,,,2,44100,24,pcm,0.122,-0.0
+Electro/Snare/Snare Damnation 1.wav,electronic,snare,damnation,1,,,2,44100,16,pcm,0.314,-0.0
+Electro/Snare/Snare Damnation 2.wav,electronic,snare,damnation,2,,,2,44100,24,pcm,0.265,-1.7
+Electro/Snare/Snare Damnation 3.wav,electronic,snare,damnation,3,,,2,44100,24,pcm,0.621,-1.7
+Electro/Snare/Snare Daywalker 1.wav,electronic,snare,daywalker,1,,,2,44100,24,pcm,0.168,-0.5
+Electro/Snare/Snare Daywalker 2.wav,electronic,snare,daywalker,2,,,2,44100,24,pcm,0.5,0.0
+Electro/Snare/Snare Daywalker 3.wav,electronic,snare,daywalker,3,,,2,44100,24,pcm,0.5,-1.7
+Electro/Snare/Snare Doomsday 1.wav,electronic,snare,doomsday,1,,,2,44100,24,pcm,0.193,-1.7
+Electro/Snare/Snare Doomsday 2.wav,electronic,snare,doomsday,2,,,2,44100,24,pcm,0.218,-1.7
+Electro/Snare/Snare EchoPlex 1.wav,electronic,snare,echoplex,1,,,2,44100,24,pcm,0.436,0.0
+Electro/Snare/Snare EchoPlex 2.wav,electronic,snare,echoplex,2,,,2,44100,24,pcm,0.367,0.0
+Electro/Snare/Snare Eclipse 1.wav,electronic,snare,eclipse,1,,,2,44100,24,pcm,0.172,-1.7
+Electro/Snare/Snare Eclipse 2.wav,electronic,snare,eclipse,2,,,2,44100,24,pcm,0.261,-1.7
+Electro/Snare/Snare Eclipse 3.wav,electronic,snare,eclipse,3,,,2,44100,16,pcm,0.316,0.0
+Electro/Snare/Snare Falling 1.wav,electronic,snare,falling,1,,,2,44100,24,pcm,0.714,-1.7
+Electro/Snare/Snare Falling 2.wav,electronic,snare,falling,2,,,2,44100,24,pcm,0.307,-1.7
+Electro/Snare/Snare Forsaken 1.wav,electronic,snare,forsaken,1,,,2,44100,24,pcm,0.268,-1.7
+Electro/Snare/Snare Forsaken 2.wav,electronic,snare,forsaken,2,,,2,44100,24,pcm,0.686,-1.7
+Electro/Snare/Snare Forsaken 3.wav,electronic,snare,forsaken,3,,,2,44100,24,pcm,0.276,-3.0
+Electro/Snare/Snare Gravity 1.wav,electronic,snare,gravity,1,,,2,44100,24,pcm,0.296,-10.5
+Electro/Snare/Snare Gravity 2.wav,electronic,snare,gravity,2,,,2,44100,24,pcm,0.706,0.0
+Electro/Snare/Snare Hemp 1.wav,electronic,snare,hemp,1,,,2,44100,24,pcm,0.684,-1.7
+Electro/Snare/Snare Hemp 2.wav,electronic,snare,hemp,2,,,2,44100,16,pcm,0.323,-0.0
+Electro/Snare/Snare Inception 1.wav,electronic,snare,inception,1,,,2,44100,24,pcm,0.298,-1.7
+Electro/Snare/Snare Inception 2.wav,electronic,snare,inception,2,,,2,44100,24,pcm,0.12,-1.7
+Electro/Snare/Snare Inception 3.wav,electronic,snare,inception,3,,,2,44100,24,pcm,0.343,-1.7
+Electro/Snare/Snare LetItGo 1.wav,electronic,snare,letitgo,1,,,2,44100,24,pcm,0.891,-0.3
+Electro/Snare/Snare LetItGo 2.wav,electronic,snare,letitgo,2,,,2,44100,24,pcm,0.393,-1.7
+Electro/Snare/Snare LetItGo 3.wav,electronic,snare,letitgo,3,,,2,44100,24,pcm,0.394,-3.4
+Electro/Snare/Snare NYC 1.wav,electronic,snare,nyc,1,,,2,44100,24,pcm,0.172,-1.7
+Electro/Snare/Snare NYC 2.wav,electronic,snare,nyc,2,,,2,44100,24,pcm,0.172,-1.7
+Electro/Snare/Snare Pandemic 1.wav,electronic,snare,pandemic,1,,,2,44100,24,pcm,0.176,-1.7
+Electro/Snare/Snare Pandemic 2.wav,electronic,snare,pandemic,2,,,2,44100,24,pcm,0.529,-1.7
+Electro/Snare/Snare Passive 1.wav,electronic,snare,passive,1,,,2,44100,24,pcm,0.298,0.0
+Electro/Snare/Snare Passive 2.wav,electronic,snare,passive,2,,,2,44100,24,pcm,0.306,-10.5
+Electro/Snare/Snare Passive 3.wav,electronic,snare,passive,3,,,2,44100,16,pcm,0.347,-0.0
+Electro/Snare/Snare Petroleum 1.wav,electronic,snare,petroleum,1,,,2,44100,24,pcm,0.96,-1.7
+Electro/Snare/Snare Petroleum 2.wav,electronic,snare,petroleum,2,,,2,44100,24,pcm,0.516,-1.7
+Electro/Snare/Snare PigFace 1.wav,electronic,snare,pigface,1,,,2,44100,24,pcm,0.252,0.0
+Electro/Snare/Snare PigFace 2.wav,electronic,snare,pigface,2,,,2,44100,24,pcm,0.424,-1.7
+Electro/Snare/Snare Pressure 1.wav,electronic,snare,pressure,1,,,2,44100,24,pcm,0.857,-0.0
+Electro/Snare/Snare Pressure 2.wav,electronic,snare,pressure,2,,,2,44100,24,pcm,0.238,-1.7
+Electro/Snare/Snare Pressure 3.wav,electronic,snare,pressure,3,,,2,44100,24,pcm,2.759,-1.7
+Electro/Snare/Snare QuantumReap 1.wav,electronic,snare,quantumreap,1,,,2,44100,24,pcm,0.723,-0.3
+Electro/Snare/Snare QuantumReap 2.wav,electronic,snare,quantumreap,2,,,2,44100,24,pcm,3.668,-1.7
+Electro/Snare/Snare QuantumReap 3.wav,electronic,snare,quantumreap,3,,,2,44100,24,pcm,0.245,-3.0
+Electro/Snare/Snare RattleSnakes 1.wav,electronic,snare,rattlesnakes,1,,,2,44100,24,pcm,0.244,-1.7
+Electro/Snare/Snare RattleSnakes 2.wav,electronic,snare,rattlesnakes,2,,,2,44100,24,pcm,0.176,-1.7
+Electro/Snare/Snare ReachingOut 1.wav,electronic,snare,reachingout,1,,,2,44100,24,pcm,0.26,-1.7
+Electro/Snare/Snare ReachingOut 2.wav,electronic,snare,reachingout,2,,,2,44100,24,pcm,0.514,-1.7
+Electro/Snare/Snare SanityKillz 1.wav,electronic,snare,sanitykillz,1,,,2,44100,24,pcm,0.217,-1.7
+Electro/Snare/Snare SanityKillz 2.wav,electronic,snare,sanitykillz,2,,,2,44100,24,pcm,0.134,-7.6
+Electro/Snare/Snare ShockOut 1.wav,electronic,snare,shockout,1,,,1,44100,16,pcm,0.191,-2.3
+Electro/Snare/Snare ShockOut 2.wav,electronic,snare,shockout,2,,,2,44100,24,pcm,0.432,-1.0
+Electro/Snare/Snare ShockOut 3.wav,electronic,snare,shockout,3,,,1,44100,16,pcm,0.113,-6.0
+Electro/Snare/Snare SoTek DS 1.wav,electronic,snare,sotek ds,1,,,2,44100,24,pcm,0.996,-3.7
+Electro/Snare/Snare SoTek DS 2.wav,electronic,snare,sotek ds,2,,,2,44100,24,pcm,0.952,-3.2
+Electro/Snare/Snare SoTek.wav,electronic,snare,sotek,,,,2,44100,32,float,1.395,-7.6
+Electro/Snare/Snare SteamPipe 1.wav,electronic,snare,steampipe,1,,,2,44100,24,pcm,0.981,-1.7
+Electro/Snare/Snare SteamPipe 2.wav,electronic,snare,steampipe,2,,,2,44100,24,pcm,0.577,-1.7
+Electro/Snare/Snare SteamPipe 3.wav,electronic,snare,steampipe,3,,,2,44100,24,pcm,0.428,-1.7
+Electro/Snare/Snare TokyoDrift 1.wav,electronic,snare,tokyodrift,1,,,2,44100,24,pcm,0.4,0.0
+Electro/Snare/Snare TokyoDrift 2.wav,electronic,snare,tokyodrift,2,,,2,44100,24,pcm,0.252,0.0
+Electro/Snare/Snare TokyoDrift 3.wav,electronic,snare,tokyodrift,3,,,2,44100,24,pcm,0.585,-1.7
+Electro/Snare/Snare Warewolf 1.wav,electronic,snare,warewolf,1,,,2,44100,24,pcm,0.37,0.0
+Electro/Snare/Snare Warewolf 2.wav,electronic,snare,warewolf,2,,,2,44100,24,pcm,0.214,-10.5
+Electro/Snare/Snare Warewolf 3.wav,electronic,snare,warewolf,3,,,2,44100,24,pcm,0.269,-1.7
+Electro/Snare/SnareRoll DarkDub 1.wav,electronic,snare,snareroll darkdub,1,,,2,44100,24,pcm,0.398,-0.0
+Electro/Snare/SnareRoll DarkDub 2.wav,electronic,snare,snareroll darkdub,2,,,2,44100,24,pcm,0.343,-1.9
+Electro/Percussion/Timpani SoTek DS.wav,electronic,timpano,timpani sotek ds,,,,2,44100,24,pcm,4.746,-3.0
+Electro/Cymbal/Ride Atomized 1.wav,electronic,tom,ride atomized,1,,,2,44100,24,pcm,1.954,-1.7
+Electro/Cymbal/Ride Atomized 2.wav,electronic,tom,ride atomized,2,,,2,44100,24,pcm,4.885,-1.7
+Electro/Tom/Tom BasketCase.wav,electronic,tom,basketcase,,,,1,44100,24,pcm,0.868,-0.0
+Electro/Tom/Tom Percman.wav,electronic,tom,percman,,,,2,44100,24,pcm,4.132,-1.7
