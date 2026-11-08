@@ -68,6 +68,12 @@ juce::AudioProcessorValueTreeState::ParameterLayout SculptDrumsProcessor::create
            NormalisableRange<float> (-60.0f, 6.0f, 0.1f), 0.0f));
     l.add (std::make_unique<AudioParameterFloat> (ParameterID { "rrRange", 1 }, "RR Range",
            NormalisableRange<float> (0.0f, 10.0f, 0.1f), 3.0f));
+    auto faderRange = NormalisableRange<float> (-72.0f, 12.0f, 0.1f);
+    faderRange.setSkewForCentre (-12.0f);
+    for (const auto& channel : sculpt::mixerChannels)
+        l.add (std::make_unique<AudioParameterFloat> (
+            ParameterID { juce::String ("level_") + channel.id, 1 },
+            juce::String (channel.shortName) + " Level", faderRange, 0.0f));
     return l;
 }
 
@@ -79,6 +85,8 @@ SculptDrumsProcessor::SculptDrumsProcessor()
     pMorph  = apvts.getRawParameterValue ("morph");
     pVolume = apvts.getRawParameterValue ("volume");
     pRange  = apvts.getRawParameterValue ("rrRange");
+    for (std::size_t i = 0; i < sculpt::mixerChannelCount; ++i)
+        pPieceGains[i] = apvts.getRawParameterValue (juce::String ("level_") + sculpt::mixerChannels[i].id);
     for (auto& w : layerWeight) w = 0.0f;
 }
 
@@ -115,6 +123,7 @@ std::vector<SculptDrumsProcessor::Piece> SculptDrumsProcessor::makePlaceholderKi
     {
         out[(size_t) p].id = "test" + juce::String (p);
         out[(size_t) p].note = notes[p];
+        out[(size_t) p].mixerIndex = sculpt::mixerIndexForMidiNote (notes[p]);
         out[(size_t) p].gamma = gammas[p];
         out[(size_t) p].rr.setStart (p * 3);
         for (auto& layer : out[(size_t) p].layers) layer.resize (1);
@@ -311,6 +320,7 @@ void SculptDrumsProcessor::loadKit (double sr, juce::Thread& thread)
         Piece p;
         p.id = pv["id"].toString();
         p.note = (int) pv["note"];
+        p.mixerIndex = sculpt::mixerIndexForMidiNote (p.note);
         p.gamma = (float) (double) pv.getProperty ("gamma", 1.0);
         p.choke = (int) pv.getProperty ("choke", 0);
         p.rr.setStart ((int) np.size() * 3); // ogni pezzo parte da un punto diverso della sequenza
@@ -378,6 +388,12 @@ void SculptDrumsProcessor::prepareToPlay (double sr, int)
     morphSm.setCurrentAndTargetValue (pMorph->load());
     volSm.reset (sr, 0.02);
     volSm.setCurrentAndTargetValue (juce::Decibels::decibelsToGain (pVolume->load(), -60.0f));
+    for (std::size_t i = 0; i < sculpt::mixerChannelCount; ++i)
+    {
+        pieceGainSm[i].reset (sr, 0.025);
+        pieceGainSm[i].setCurrentAndTargetValue (
+            juce::Decibels::decibelsToGain (pPieceGains[i]->load(), -72.0f));
+    }
 
     const bool alreadyLoaded = kitStatus.load() == Loaded && std::abs (loadedSr.load() - sr) < 0.5;
     if (alreadyLoaded) return;
@@ -481,6 +497,12 @@ void SculptDrumsProcessor::renderSegment (juce::AudioBuffer<float>& buf, int sta
     const float m1 = morphSm.skip (n);
     const float v0 = volSm.getCurrentValue();
     const float v1 = volSm.skip (n);
+    std::array<float, sculpt::mixerChannelCount> channelStart {}, channelEnd {};
+    for (std::size_t i = 0; i < sculpt::mixerChannelCount; ++i)
+    {
+        channelStart[i] = pieceGainSm[i].getCurrentValue();
+        channelEnd[i] = pieceGainSm[i].skip (n);
+    }
     float* L = buf.getWritePointer (0) + start;
     float* R = buf.getWritePointer (1) + start;
 
@@ -488,6 +510,8 @@ void SculptDrumsProcessor::renderSegment (juce::AudioBuffer<float>& buf, int sta
     {
         if (! v.active) continue;
         const auto& p = pieces[(size_t) v.piece];
+        const float piece0 = p.mixerIndex < 0 ? 1.0f : channelStart[(std::size_t) p.mixerIndex];
+        const float piece1 = p.mixerIndex < 0 ? 1.0f : channelEnd[(std::size_t) p.mixerIndex];
         // L'offset scelto dal round robin rimane fisso per il colpo,
         // mentre il target MORPH può seguire l'automazione della DAW.
         const auto targetWeights = collapseDuplicateSources (
@@ -519,7 +543,8 @@ void SculptDrumsProcessor::renderSegment (juce::AudioBuffer<float>& buf, int sta
                     sl += g * dl[(size_t) k][idx];
                     sr += g * dr[(size_t) k][idx];
                 }
-            float g = v.vel * (v0 + (v1 - v0) * t) * v.chokeGain;
+            float g = v.vel * (v0 + (v1 - v0) * t)
+                      * (piece0 + (piece1 - piece0) * t) * v.chokeGain;
             if (v.choking)
             {
                 v.chokeGain -= 1.0f / 512.0f;
@@ -551,6 +576,9 @@ void SculptDrumsProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce:
     const int N = buffer.getNumSamples();
     morphSm.setTargetValue (pMorph->load());
     volSm.setTargetValue (juce::Decibels::decibelsToGain (pVolume->load(), -60.0f));
+    for (std::size_t i = 0; i < sculpt::mixerChannelCount; ++i)
+        pieceGainSm[i].setTargetValue (
+            juce::Decibels::decibelsToGain (pPieceGains[i]->load(), -72.0f));
 
     int pos = 0;
     for (const auto meta : midi)

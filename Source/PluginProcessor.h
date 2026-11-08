@@ -5,6 +5,7 @@
 #include <memory>
 #include <vector>
 #include "MorphEngine.h"
+#include "DrumChannels.h"
 
 class SculptDrumsProcessor : public juce::AudioProcessor
 {
@@ -57,6 +58,7 @@ private:
     {
         juce::String id;
         int note = -1;
+        int mixerIndex = -1;
         float gamma = 1.0f;
         int choke = 0;                                  // 0 = nessun gruppo
         std::array<std::vector<Sample>, sculpt::stageCount> layers;
@@ -95,6 +97,8 @@ private:
     juce::SpinLock kitLock;
     std::array<Voice, 32> voices;
     juce::SmoothedValue<float> morphSm, volSm;
+    std::array<juce::SmoothedValue<float>, sculpt::mixerChannelCount> pieceGainSm;
+    std::array<std::atomic<float>*, sculpt::mixerChannelCount> pPieceGains {};
     std::atomic<float>* pMorph = nullptr;
     std::atomic<float>* pVolume = nullptr;
     std::atomic<float>* pRange = nullptr;

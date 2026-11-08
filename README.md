@@ -5,7 +5,7 @@ Per macOS, formato **VST3**, JUCE 8.
 
 ## Libreria integrata: sei stadi ordinati
 
-Il repository include tutti i **444 WAV** nella cartella `Samples/`. La build
+Il repository include i **125 WAV selezionati** nella cartella `Samples/`. La build
 macOS incorpora automaticamente `Samples/` e `kit/kit.json` dentro il VST3.
 **Non occorre creare cartelle in `~/Music` né installare i WAV separatamente.**
 
@@ -27,19 +27,24 @@ Gli extra `.asd`, `.DS_Store`, `__MACOSX` e il vecchio `kit.json` non sono distr
 1. Da GitHub Actions scarica `SculptDrums-VST3-macOS` dell'ultima build.
 2. Estrai lo ZIP e copia `Sculpt Drums.vst3` in `/Library/Audio/Plug-Ins/VST3/`.
 3. Riavvia Reaper o Sculpt DAW e apri lo strumento su una traccia MIDI/Instrument.
-4. Aspetta il caricamento: il plugin deve indicare `Kit: ... eventi / 444 WAV`.
+4. Aspetta il caricamento: il plugin deve indicare `Kit: ... eventi / 125 WAV`.
 
 Il motore prova prima il kit incorporato nel VST3, poi la vecchia cartella
 `~/Music/Sculpt Drums/` per compatibilità di sviluppo. Se entrambi mancano,
 produce soltanto i suoni sintetici di prova.
 
-### Aggiornare la libreria dai campioni originali
+### Aggiornare la selezione dei campioni
 
 ```sh
-python3 tools/import_samples.py '/percorso/Sculpt Drums.zip'
 python3 tools/build_ordered_kit.py Samples -o kit/kit.json
 python3 tools/audit_install.py .
 ```
+
+Il manifest viene rigenerato dai soli WAV presenti in `Samples/`: non esiste
+un numero minimo fisso di campioni. Se aggiungi o rimuovi WAV, rigenera sempre
+`kit/kit.json` prima della build. `tools/import_samples.py` è disponibile per
+importare nuovi WAV da uno ZIP, ma **reimportare l'archivio originale ripristina
+anche i campioni scartati**.
 
 Il generatore raggruppa le riprese `close + over/OH + room` dello stesso colpo
 Indra: avanzano insieme nel round robin e conservano il loro offset originale.
@@ -48,8 +53,10 @@ microfonico indipendente resta un obiettivo futuro.
 
 ## Motore
 
-- Una sola manopola **MORPH** (0–100) attraversa i sei stadi ordinati,
-  con crossfade a potenza costante fra stadi adiacenti.
+- Una sola manopola **MORPH** (0–100) attraversa i sei stadi ordinati.
+  I campioni hanno ora una sovrapposizione più ampia: fino a **quattro stadi
+  contemporaneamente**, normalizzati a potenza costante. Gli estremi 0 e 100
+  rimangono rispettivamente naturali ed elettronici al 100%.
 - Ogni pezzo ha la propria curva `gamma`.
 - Il round robin modifica leggermente il target MORPH a ogni nota;
   l'offset rimane fisso per tutta la durata del colpo.
@@ -58,19 +65,28 @@ microfonico indipendente resta un obiettivo futuro.
   disponibile più vicino senza creare duplicati in RAM.
 - Volume generale, indicatore VU e choke dei charleston.
 
+### Mixer
+
+Il piccolo pulsante **≡** in alto a destra apre un mixer con **15 fader**, uno
+per ogni elemento MIDI attualmente presente. Il mixer bilancia l'intero suono
+di un elemento, qualunque sia la posizione del MORPH; non altera i rapporti
+fra gli stadi. Ogni fader va da silenzio (-72 dB) a +12 dB, con default 0 dB.
+Trascinare il fader per regolare il livello e fare doppio clic per tornare a
+0 dB. I livelli sono parametri VST3 automatizzabili e salvati nelle sessioni.
+Il pulsante ≡ torna alla schermata principale con MORPH, Volume e VU meter.
+
 ### MIDI
 
 | Nota | Pezzo | Nota | Pezzo |
 |---:|---|---:|---|
 | 36 | Kick | 38 | Snare |
 | 37 | Snare rim | 40 | Rimshot |
-| 39 | Clap | 42 | Hi-hat closed |
 | 44 | Hi-hat foot | 46 | Hi-hat open |
-| 45 | Tom | 41 | Floor tom |
-| 49 | Crash | 52 | Reverse cymbal |
-| 51 | Ride | 53 | Ride bell |
-| 55 | Splash | 70 | Shaker |
-| 75 | Percussion | 76 | Combo |
+| 42 | Hi-hat closed | 45 | Tom |
+| 41 | Floor tom | 49 | Crash |
+| 52 | Reverse cymbal | 51 | Ride |
+| 53 | Ride bell | 55 | Splash |
+| 75 | Percussion | | |
 
 ## Build
 
@@ -81,7 +97,8 @@ cmake --build build --config Release --target SculptDrums_VST3
 
 La GitHub Action `.github/workflows/build-macos-vst3.yml` produce lo ZIP VST3
 universale Apple Silicon + Intel nella pagina Actions del run. Verifica che
-tutti i 444 WAV siano presenti nel bundle prima di apporre la firma ad hoc.
+tutti i WAV elencati nel manifest siano presenti nel repository e nel bundle
+prima di apporre la firma ad hoc.
 
 ## Verifiche ancora necessarie
 

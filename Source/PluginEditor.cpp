@@ -35,6 +35,45 @@ void SculptLookAndFeel::drawRotarySlider (juce::Graphics& g, int x, int y, int w
     g.fillPath (tick, juce::AffineTransform::rotation (a0 + pos * (a1 - a0)).translated (c.x, c.y));
 }
 
+void SculptLookAndFeel::drawLinearSlider (juce::Graphics& g, int x, int y, int w, int h,
+                                          float sliderPos, float minSliderPos, float maxSliderPos,
+                                          juce::Slider::SliderStyle style, juce::Slider& slider)
+{
+    if (style != juce::Slider::LinearVertical)
+    {
+        juce::LookAndFeel_V4::drawLinearSlider (g, x, y, w, h, sliderPos,
+                                                minSliderPos, maxSliderPos, style, slider);
+        return;
+    }
+
+    const float cx = (float) x + (float) w * 0.5f;
+    const float top = (float) y + 8.0f;
+    const float bottom = (float) (y + h) - 8.0f;
+    g.setColour (juce::Colour (0xff090909));
+    g.fillRoundedRectangle (cx - 3.5f, top, 7.0f, bottom - top, 3.0f);
+    g.setColour (cream.withAlpha (0.17f));
+    g.drawLine (cx, top, cx, bottom, 1.0f);
+    g.setColour (warm.withAlpha (0.75f));
+    g.drawLine (cx, sliderPos, cx, bottom, 2.5f);
+
+    for (int i = 0; i <= 10; ++i)
+    {
+        const float yy = top + (bottom - top) * (float) i / 10.0f;
+        g.setColour (cream.withAlpha (i == 2 ? 0.38f : 0.15f));
+        g.drawLine (cx - 13.0f, yy, cx - 9.5f, yy, 1.0f);
+        g.drawLine (cx + 9.5f, yy, cx + 13.0f, yy, 1.0f);
+    }
+
+    const float capW = juce::jmin (24.0f, (float) w - 4.0f);
+    const auto cap = juce::Rectangle<float> (cx - capW * 0.5f, sliderPos - 10.0f, capW, 20.0f);
+    g.setGradientFill (juce::ColourGradient (juce::Colour (0xff6b6254), cap.getX(), cap.getY(),
+                                            juce::Colour (0xff242422), cap.getX(), cap.getBottom(), false));
+    g.fillRoundedRectangle (cap, 3.0f);
+    g.setColour (cream.withAlpha (0.8f));
+    g.drawRoundedRectangle (cap, 3.0f, 1.0f);
+    g.drawLine (cx - capW * 0.34f, sliderPos, cx + capW * 0.34f, sliderPos, 1.5f);
+}
+
 SculptDrumsEditor::SculptDrumsEditor (SculptDrumsProcessor& p)
     : AudioProcessorEditor (&p), proc (p),
       morphAtt (p.apvts, "morph", morph), volumeAtt (p.apvts, "volume", volume)
@@ -49,6 +88,38 @@ SculptDrumsEditor::SculptDrumsEditor (SculptDrumsProcessor& p)
     }
     morph.setDoubleClickReturnValue (true, 50.0);
     volume.setDoubleClickReturnValue (true, 0.0);
+
+    mixerButton.setButtonText (juce::String::fromUTF8 ("≡"));
+    mixerButton.setTooltip ("Mostra/nascondi il mixer dei singoli pezzi");
+    mixerButton.setColour (juce::TextButton::buttonColourId, juce::Colour (0xff242424));
+    mixerButton.setColour (juce::TextButton::textColourOffId, cream);
+    mixerButton.setColour (juce::TextButton::buttonOnColourId, juce::Colour (0xff424037));
+    mixerButton.setColour (juce::TextButton::textColourOnId, cream);
+    mixerButton.setClickingTogglesState (true);
+    mixerButton.onClick = [this]
+    {
+        mixerOpen = mixerButton.getToggleState();
+        updateMixerVisibility();
+        repaint();
+    };
+    addAndMakeVisible (mixerButton);
+
+    for (std::size_t i = 0; i < sculpt::mixerChannelCount; ++i)
+    {
+        auto& fader = mixerFaders[i];
+        fader.setSliderStyle (juce::Slider::LinearVertical);
+        fader.setTextBoxStyle (juce::Slider::NoTextBox, false, 0, 0);
+        fader.setLookAndFeel (&laf);
+        fader.setColour (juce::Slider::trackColourId, cream.withAlpha (0.35f));
+        fader.setColour (juce::Slider::thumbColourId, warm);
+        fader.setTextValueSuffix (" dB");
+        fader.setPopupDisplayEnabled (true, true, this);
+        fader.setDoubleClickReturnValue (true, 0.0);
+        addChildComponent (fader);
+        mixerAttachments[i] = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment> (
+            p.apvts, juce::String ("level_") + sculpt::mixerChannels[i].id, fader);
+    }
+
     setSize (768, 512);
     startTimerHz (30);
 }
@@ -57,12 +128,31 @@ SculptDrumsEditor::~SculptDrumsEditor()
 {
     morph.setLookAndFeel (nullptr);
     volume.setLookAndFeel (nullptr);
+    for (auto& fader : mixerFaders) fader.setLookAndFeel (nullptr);
 }
 
 void SculptDrumsEditor::resized()
 {
     morph.setBounds (184, 50, 400, 400);
     volume.setBounds (48, 392, 84, 84);
+    mixerButton.setBounds (714, 12, 36, 28);
+
+    constexpr int left = 20;
+    constexpr int mixerWidth = 728;
+    for (std::size_t i = 0; i < sculpt::mixerChannelCount; ++i)
+    {
+        const int start = left + (int) (i * mixerWidth / sculpt::mixerChannelCount);
+        const int end = left + (int) ((i + 1) * mixerWidth / sculpt::mixerChannelCount);
+        mixerFaders[i].setBounds (start + 8, 148, end - start - 16, 253);
+    }
+    updateMixerVisibility();
+}
+
+void SculptDrumsEditor::updateMixerVisibility()
+{
+    morph.setVisible (! mixerOpen);
+    volume.setVisible (! mixerOpen);
+    for (auto& fader : mixerFaders) fader.setVisible (mixerOpen);
 }
 
 void SculptDrumsEditor::timerCallback()
@@ -111,6 +201,37 @@ void SculptDrumsEditor::paint (juce::Graphics& g)
     g.setColour (cream.withAlpha (0.35f));
     g.setFont (juce::Font (juce::FontOptions (11.0f)));
     g.drawText (proc.getKitMessage(), 20, 44, getWidth() - 40, 16, juce::Justification::centred);
+
+    if (mixerOpen)
+    {
+        const auto panel = juce::Rectangle<float> (12.0f, 72.0f, 744.0f, 426.0f);
+        g.setColour (juce::Colour (0xff171717));
+        g.fillRoundedRectangle (panel, 12.0f);
+        g.setColour (cream.withAlpha (0.12f));
+        g.drawRoundedRectangle (panel, 12.0f, 1.0f);
+
+        constexpr int left = 20;
+        constexpr int width = 728;
+        for (std::size_t i = 0; i < sculpt::mixerChannelCount; ++i)
+        {
+            const int start = left + (int) (i * width / sculpt::mixerChannelCount);
+            const int end = left + (int) ((i + 1) * width / sculpt::mixerChannelCount);
+            const auto groupColour = i < 4 || (i >= 7 && i < 9) ? warm : i < 7 ? cool : amber;
+            g.setColour (groupColour.withAlpha (0.7f));
+            g.fillRoundedRectangle ((float) start + 11.0f, 112.0f,
+                                    (float) (end - start - 22), 2.0f, 1.0f);
+            g.setColour (cream.withAlpha (0.75f));
+            g.setFont (juce::Font (juce::FontOptions (9.5f)));
+            g.drawFittedText (sculpt::mixerChannels[i].shortName,
+                              start, 417, end - start, 20, juce::Justification::centred, 1);
+            g.setColour (cream.withAlpha (0.17f));
+            g.setFont (juce::Font (juce::FontOptions (9.0f)));
+            g.drawText (juce::String (sculpt::mixerChannels[i].midiNote),
+                        start, 439, end - start, 14, juce::Justification::centred);
+            if (i > 0) g.drawVerticalLine (start, 102.0f, 464.0f);
+        }
+        return;
+    }
 
     // punti round robin
     const int step = proc.rrStep.load() % 5;

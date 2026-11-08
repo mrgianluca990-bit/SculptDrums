@@ -30,8 +30,10 @@ introduce sei riferimenti distinti, preservati dal motore VST3:
 | 80 | `05 processed` | Acustico trattato 3 |
 | 100 | `06 Electro` | Elettronico |
 
-Le dissolvenze sono a potenza costante fra due riferimenti adiacenti;
-la curva per pezzo cambia l'andamento della dissolvenza senza spostare
+La versione con mixer usa un kernel coseno esteso su due intervalli MORPH
+per lato: le transizioni sovrappongono fino a quattro stadi contemporaneamente,
+con normalizzazione energetica. I punti 0 e 100 rimangono puri.
+La curva per pezzo cambia l'andamento della transizione senza spostare
 le sei posizioni fisse. Quando un particolare elemento non è presente
 in uno stadio si usa il campione del riferimento disponibile più vicino.
 
@@ -73,11 +75,16 @@ Parametro automatizzabile dalla DAW, con smoothing, bilanciamenti progressivi, g
 
 Quarta proposta grafica, modificata (vedi `gui-mockup.png`): superficie nera opaca, scritta SCULPT DRUMS in alto, grande manopola MORPH centrale con arco luminoso caldo→freddo, tre indicatori delle famiglie di campioni, punti luminosi del round robin, manopola Volume in basso a sinistra, VU meter analogico in basso a destra.
 
+Il pulsante grafico **≡** apre un mixer secondario con 15 fader verticali,
+uno per ognuna delle articolazioni/parti presenti nel kit da 125 WAV. Il
+guadagno per pezzo è indipendente dalla posizione MORPH, dispone di smoothing
+audio di 25 ms ed è salvato nei preset tramite APVTS.
+
 ## 8. Formato
 
 macOS, **VST3** (decisione: niente AU). In seguito integrabile in Sculpt DAW. Prevista l'instradamento separato delle componenti del kit verso le uscite della DAW, da definire.
 
-La libreria di 444 WAV è ora presente nel repository in `Samples/` e copiata
+La libreria selezionata di 125 WAV è presente nel repository in `Samples/` e copiata
 nel bundle VST3 (`Contents/Resources/SculptDrumsKit/Samples/`) in fase di build.
 La cartella musicale esterna non è necessaria. Lo stadio `01 Natural ` dello ZIP
 originale è normalizzato in `01 Natural` per evitare ambiguità nei percorsi.
