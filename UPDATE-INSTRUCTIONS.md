@@ -1,47 +1,41 @@
-# Sculpt Drums — aggiornamento con libreria integrata
+# Sculpt Drums — kit definitivo con 125 WAV
 
-Questo pacchetto contiene **codice, kit/kit.json e 444 WAV** distribuiti in
-`Samples/`. La build GitHub Actions li incorpora nel VST3 macOS.
+Questo aggiornamento allinea `kit/kit.json` ai **125 WAV effettivamente presenti
+su GitHub** (21 + 38 + 6 + 16 + 10 + 34). Non aggiunge né elimina alcun WAV.
 
-## A. Pubblicare nel repository (da Terminale sul Mac)
+## Pubblicare la correzione sul repository
 
-1. Clona, se necessario: `git clone https://github.com/mrgianluca990-bit/SculptDrums.git`.
-2. Scompatta `SculptDrums-complete-library-update.zip` e copia **il contenuto**
-   sopra la cartella locale `SculptDrums`, senza cancellare gli altri file.
-3. Dal Terminale nella cartella del repository esegui:
+L'archivio `SculptDrums-125-samples-fix.zip` contiene soltanto:
 
-   ```sh
-   python3 tools/audit_install.py .
-   git add CMakeLists.txt .github/workflows/build-macos-vst3.yml README.md \
-     UPDATE-INSTRUCTIONS.md Source/ docs/ kit/ tools/ Samples/ .gitignore
-   git commit -m "feat(drums): embed all 444 WAV in VST3"
-   git push origin main
-   ```
+- `kit/kit.json` aggiornato alla selezione corrente;
+- `tools/build_ordered_kit.py`, `tools/import_samples.py` e `tools/audit_install.py`;
+- `.github/workflows/build-macos-vst3.yml`, con controllo della libreria prima del build;
+- `CMakeLists.txt` e documentazione aggiornata.
 
-   La verifica deve indicare `WAV nel manifest: 444` e `WAV mancanti: 0`.
+Se hai già clonato il repository, estrai lo ZIP sopra la copia locale e fai:
 
-## B. Installare il nuovo VST3
+```sh
+python3 tools/audit_install.py .
+git add kit/kit.json .github/workflows/build-macos-vst3.yml \
+  CMakeLists.txt README.md UPDATE-INSTRUCTIONS.md docs/SPECIFICHE.md \
+  tools/build_ordered_kit.py tools/import_samples.py tools/audit_install.py
+git commit -m "fix(drums): align kit manifest to 125 selected WAV"
+git push origin main
+```
 
-1. Apri GitHub → Actions → ultima build `Sculpt Drums VST3 macOS`.
-2. Quando il run è verde, scarica l'artifact `SculptDrums-VST3-macOS`.
-3. Estrai `Sculpt Drums.vst3` dallo ZIP (se necessario, da un secondo ZIP interno).
-4. Chiudi la DAW e sostituisci il VST3 nella cartella `/Library/Audio/Plug-Ins/VST3/`.
-5. Riavvia Reaper, rifai la scansione dei plugin e inserisci **Sculpt Drums**
-   come strumento virtuale su una traccia MIDI.
-6. Aspetta il caricamento in background e verifica lo stato:
-   `Kit: ... eventi / 444 WAV`, senza campioni mancanti.
+Il controllo deve restituire `WAV nel manifest: 125`, `WAV sul disco: 125`
+e `WAV mancanti: 0`. Se restituisce numeri differenti, verifica che nel tuo
+clone i campioni corrispondano alla selezione pubblicata sul repository.
 
-Il plugin contiene già tutti i WAV. **Non serve** la cartella
-`~/Music/Sculpt Drums/`.
+## Testare il VST3
 
-## C. Test da effettuare
+Dopo il push vai in GitHub Actions e attendi una nuova compilazione verde.
+Scarica l'artifact `SculptDrums-VST3-macOS`, estrailo e sostituisci il plugin
+in `/Library/Audio/Plug-Ins/VST3/`. Chiudi e riapri la DAW.
 
-- Suona MIDI 36 (kick), 38 (snare), 42 (hi-hat closed).
-- Muovi MORPH nelle posizioni 0, 20, 40, 60, 80 e 100.
-- Verifica le differenze acustiche a sinistra ed elettroniche a destra.
-- Prova i ribattuti e il round robin, il volume e il meter.
+All'avvio lo stato atteso è `Kit: ... eventi / 125 WAV` **senza mancanti**.
+Verifica le sei posizioni MORPH (0, 20, 40, 60, 80, 100), la velocity, il
+round robin, il volume e il VU meter.
 
-La prima compilazione macOS e il funzionamento nella DAW **vanno verificati**
-dopo il push. La firma ad hoc non equivale alla notarizzazione Apple: se
-macOS blocca il plugin, autorizza il singolo file, senza disabilitare
-Gatekeeper globalmente.
+Le categorie clap, shaker e combo non sono incluse nella selezione attuale:
+non ricevono un suono MIDI dedicato.

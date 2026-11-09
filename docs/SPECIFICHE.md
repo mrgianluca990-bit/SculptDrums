@@ -30,10 +30,8 @@ introduce sei riferimenti distinti, preservati dal motore VST3:
 | 80 | `05 processed` | Acustico trattato 3 |
 | 100 | `06 Electro` | Elettronico |
 
-La versione con mixer usa un kernel coseno esteso su due intervalli MORPH
-per lato: le transizioni sovrappongono fino a quattro stadi contemporaneamente,
-con normalizzazione energetica. I punti 0 e 100 rimangono puri.
-La curva per pezzo cambia l'andamento della transizione senza spostare
+Le dissolvenze sono a potenza costante fra due riferimenti adiacenti;
+la curva per pezzo cambia l'andamento della dissolvenza senza spostare
 le sei posizioni fisse. Quando un particolare elemento non è presente
 in uno stadio si usa il campione del riferimento disponibile più vicino.
 
@@ -74,11 +72,6 @@ Parametro automatizzabile dalla DAW, con smoothing, bilanciamenti progressivi, g
 ## 7. Interfaccia grafica
 
 Quarta proposta grafica, modificata (vedi `gui-mockup.png`): superficie nera opaca, scritta SCULPT DRUMS in alto, grande manopola MORPH centrale con arco luminoso caldo→freddo, tre indicatori delle famiglie di campioni, punti luminosi del round robin, manopola Volume in basso a sinistra, VU meter analogico in basso a destra.
-
-Il pulsante grafico **≡** apre un mixer secondario con 15 fader verticali,
-uno per ognuna delle articolazioni/parti presenti nel kit da 125 WAV. Il
-guadagno per pezzo è indipendente dalla posizione MORPH, dispone di smoothing
-audio di 25 ms ed è salvato nei preset tramite APVTS.
 
 ## 8. Formato
 

@@ -35,8 +35,8 @@ def import_wavs(source: Path, destination: Path) -> dict[str, str]:
                     target.write(block)
                     digest.update(block)
             checksums[relative] = digest.hexdigest()
-    if len(checksums) != 444:
-        raise ValueError(f"Attesi 444 WAV: trovati {len(checksums)}")
+    if not checksums:
+        raise ValueError("Nessun WAV trovato nell'archivio")
     return checksums
 
 

@@ -52,6 +52,6 @@ if(APPLE)
       "${CMAKE_SOURCE_DIR}/kit/kit.json" "${SCULPT_KIT_RESOURCES}/kit.json"
     COMMAND "${CMAKE_COMMAND}" -E copy_directory
       "${CMAKE_SOURCE_DIR}/Samples" "${SCULPT_KIT_RESOURCES}/Samples"
-    COMMENT "Incorporazione dei 444 WAV nel bundle Sculpt Drums VST3"
+    COMMENT "Incorporazione della selezione WAV nel bundle Sculpt Drums VST3"
     VERBATIM)
 endif()

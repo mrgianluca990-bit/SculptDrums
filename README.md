@@ -53,10 +53,8 @@ microfonico indipendente resta un obiettivo futuro.
 
 ## Motore
 
-- Una sola manopola **MORPH** (0–100) attraversa i sei stadi ordinati.
-  I campioni hanno ora una sovrapposizione più ampia: fino a **quattro stadi
-  contemporaneamente**, normalizzati a potenza costante. Gli estremi 0 e 100
-  rimangono rispettivamente naturali ed elettronici al 100%.
+- Una sola manopola **MORPH** (0–100) attraversa i sei stadi ordinati,
+  con crossfade a potenza costante fra stadi adiacenti.
 - Ogni pezzo ha la propria curva `gamma`.
 - Il round robin modifica leggermente il target MORPH a ogni nota;
   l'offset rimane fisso per tutta la durata del colpo.
@@ -64,16 +62,6 @@ microfonico indipendente resta un obiettivo futuro.
 - Se manca un pezzo in un determinato stadio, il motore usa il campione
   disponibile più vicino senza creare duplicati in RAM.
 - Volume generale, indicatore VU e choke dei charleston.
-
-### Mixer
-
-Il piccolo pulsante **≡** in alto a destra apre un mixer con **15 fader**, uno
-per ogni elemento MIDI attualmente presente. Il mixer bilancia l'intero suono
-di un elemento, qualunque sia la posizione del MORPH; non altera i rapporti
-fra gli stadi. Ogni fader va da silenzio (-72 dB) a +12 dB, con default 0 dB.
-Trascinare il fader per regolare il livello e fare doppio clic per tornare a
-0 dB. I livelli sono parametri VST3 automatizzabili e salvati nelle sessioni.
-Il pulsante ≡ torna alla schermata principale con MORPH, Volume e VU meter.
 
 ### MIDI
 

@@ -4,6 +4,7 @@
 Uso:
     python3 tools/build_ordered_kit.py '/percorso/Sculpt Drums.zip' -o kit/kit.json
     python3 tools/build_ordered_kit.py Samples -o kit/kit.json
+    python3 tools/build_ordered_kit.py lista-wav.txt -o kit/kit.json
 
 I percorsi nel manifest sono relativi alla cartella Samples inclusa nel VST3.
 """
@@ -48,6 +49,9 @@ PIECES = (
 
 
 def names_from_source(source: Path):
+    if source.is_file() and source.suffix.lower() == ".txt":
+        return sorted(name for line in source.read_text(encoding="utf-8").splitlines()
+                      if (name := line.rstrip("\r")))
     if source.is_file() and source.suffix.lower() == ".zip":
         with zipfile.ZipFile(source) as archive:
             return sorted(
